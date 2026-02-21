@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scott's Art — Botanical Paintings by Scott Carle</title>
+<meta name="description" content="Large-scale botanical oil paintings on black canvas by Scott Carle, M.D. — Little Rock, Arkansas. Commissions, gallery, and Bitcoin Ordinals.">
+<meta property="og:title" content="Scott's Art — Botanical Paintings by Scott Carle">
+<meta property="og:description" content="Vivid, dimensional flowers that emerge from darkness. 200+ original oil paintings by physician and artist Scott Carle.">
+<meta property="og:image" content="images/hero/purple-anemone.jpeg">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0e0c0a;
+    --dark: #1a1612;
+    --warm-brown: #2e2119;
+    --amber: #c8873a;
+    --amber-light: #e8a85a;
+    --cream: #f5efe6;
+    --cream-dark: #e8ddd0;
+    --sage: #7a8c6e;
+    --rust: #a04a2a;
+    --text: #f0e8dc;
+    --text-muted: #a09080;
+    --border: rgba(200,135,58,0.2);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(14,12,10,0.95), transparent);
+    backdrop-filter: blur(4px);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-logo span {
+    color: var(--amber);
+    font-style: italic;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--amber); }
+
+  .nav-cta {
+    background: var(--amber);
+    color: var(--black) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 2px;
+    font-weight: 500 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    transition: background 0.3s !important;
+  }
+
+  .nav-cta:hover { background: var(--amber-light) !important; color: var(--black) !important; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 4rem 4rem 5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--amber);
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 1rem;
+  }
+
+  .hero-title em {
+    color: var(--amber);
+    font-style: italic;
+  }
+
+  .hero-subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 38ch;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--amber);
+    color: var(--black);
+    padding: 0.85rem 2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn-primary:hover {
+    background: var(--amber-light);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    color: var(--cream);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+  }
+
+  .btn-ghost:hover { opacity: 1; }
+
+  /* Live badge */
+  .live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(200,135,58,0.1);
+    border: 1px solid var(--border);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--amber);
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: all 0.3s;
+    width: fit-content;
+  }
+
+  .live-badge:hover {
+    background: rgba(200,135,58,0.2);
+  }
+
+  .live-dot {
+    width: 7px;
+    height: 7px;
+    background: #e05050;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-painting-grid {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 3px;
+    padding-top: 5rem;
+  }
+
+  .hero-painting {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .hero-painting img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .hero-painting:hover img {
+    transform: scale(1.05);
+  }
+
+  .hero-painting::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(14,12,10,0.8));
+    transition: opacity 0.4s;
+    z-index: 1;
+  }
+
+  .hero-painting:hover::after {
+    opacity: 0.3;
+  }
+
+  .hero-fade {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 120px;
+    background: linear-gradient(to right, var(--black), transparent);
+    z-index: 3;
+  }
+
+  /* ─── STATS BAR ─── */
+  .stats-bar {
+    background: var(--warm-brown);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--amber);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 3rem;
+    background: var(--border);
+  }
+
+  /* ─── SECTION COMMON ─── */
+  section {
+    padding: 5rem 5rem;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--amber);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .section-body {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    max-width: 50ch;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ─── GALLERY ─── */
+  .gallery-section {
+    background: var(--dark);
+  }
+
+  .gallery-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .gallery-filters {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 0.4rem 1rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.3s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: var(--amber);
+    border-color: var(--amber);
+    color: var(--black);
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .gallery-card {
+    cursor: pointer;
+    position: relative;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .gallery-card.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.97);
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .gallery-card-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 0.8rem;
+    transition: transform 0.4s ease;
+    background: var(--warm-brown);
+  }
+
+  .gallery-card:hover .gallery-card-img {
+    transform: translateY(-4px);
+  }
+
+  .gallery-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .gallery-card:hover .gallery-card-img img {
+    transform: scale(1.05);
+  }
+
+  .gallery-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(14,12,10,0.9) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+    z-index: 2;
+  }
+
+  .gallery-card:hover .gallery-card-overlay {
+    opacity: 1;
+  }
+
+  .gallery-card-action {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+
+  .gallery-card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    color: var(--cream);
+    margin-bottom: 0.2rem;
+  }
+
+  .gallery-card-meta {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .gallery-card-available {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sage);
+  }
+
+  .gallery-view-all {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  /* ─── PROCESS ─── */
+  .process-section {
+    background: var(--black);
+    border-top: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .process-strip {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1.5rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--amber) var(--warm-brown);
+  }
+
+  .process-strip::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .process-strip::-webkit-scrollbar-track {
+    background: var(--warm-brown);
+    border-radius: 2px;
+  }
+
+  .process-strip::-webkit-scrollbar-thumb {
+    background: var(--amber);
+    border-radius: 2px;
+  }
+
+  .process-step {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    position: relative;
+  }
+
+  .process-step img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+  }
+
+  .process-step-label {
+    position: absolute;
+    top: 0.8rem;
+    left: 0.8rem;
+    background: rgba(14,12,10,0.85);
+    padding: 0.3rem 0.8rem;
+    border-radius: 2px;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+
+  .process-step-caption {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.6rem;
+    letter-spacing: 0.03em;
+  }
+
+  .process-arrow {
+    flex: 0 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--amber);
+    opacity: 0.4;
+    align-self: center;
+    margin-top: -2rem;
+  }
+
+  /* ─── WEBCAM / LIVE ─── */
+  .webcam-section {
+    background: var(--black);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .webcam-frame {
+    position: relative;
+    aspect-ratio: 16/10;
+    background: var(--warm-brown);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .webcam-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .webcam-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    filter: blur(2px);
+  }
+
+  .webcam-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.8rem;
+    background: rgba(14,12,10,0.5);
+  }
+
+  .webcam-overlay-icon {
+    font-size: 2.5rem;
+    opacity: 0.6;
+  }
+
+  .webcam-overlay-text {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .webcam-live-pill {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(224, 80, 80, 0.9);
+    color: white;
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 2;
+  }
+
+  .webcam-corner {
+    position: absolute;
+    bottom: 0.8rem;
+    right: 0.8rem;
+    background: rgba(14,12,10,0.7);
+    padding: 0.35rem 0.8rem;
+    border-radius: 2px;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    z-index: 2;
+  }
+
+  .webcam-schedule {
+    margin-top: 1.5rem;
+    padding: 1.2rem 1.5rem;
+    background: var(--warm-brown);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .schedule-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .schedule-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--amber);
+    flex-shrink: 0;
+  }
+
+  /* ─── ABOUT ─── */
+  .about-section {
+    background: var(--warm-brown);
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6rem;
+    align-items: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-portrait {
+    position: relative;
+  }
+
+  .about-portrait-frame {
+    aspect-ratio: 3/4;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    background: var(--dark);
+  }
+
+  .about-portrait-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .about-quote-block {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -2rem;
+    background: var(--black);
+    border: 1px solid var(--border);
+    padding: 1.2rem 1.5rem;
+    max-width: 260px;
+    border-radius: 3px;
+  }
+
+  .about-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--cream);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+
+  .about-quote-attr {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+
+  .about-text p {
+    font-family: 'Lora', serif;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text p strong {
+    color: var(--cream);
+    font-weight: 400;
+  }
+
+  .about-credentials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .credential {
+    padding: 1rem;
+    background: rgba(0,0,0,0.2);
+    border-left: 2px solid var(--amber);
+  }
+
+  .credential-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.3rem;
+  }
+
+  .credential-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--cream);
+  }
+
+  /* ─── COMMISSION ─── */
+  .commission-section {
+    background: var(--dark);
+    text-align: center;
+  }
+
+  .commission-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .commission-form {
+    background: var(--warm-brown);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2.5rem;
+    margin-top: 2.5rem;
+    text-align: left;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-group label {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--border);
+    color: var(--cream);
+    padding: 0.7rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.3s;
+    width: 100%;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--amber);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-group select option { background: var(--dark); }
+
+  /* ─── BITCOIN ─── */
+  .bitcoin-section {
+    background: var(--black);
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .bitcoin-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(247,147,26,0.1);
+    border: 1px solid rgba(247,147,26,0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f7931a;
+    margin-bottom: 1.5rem;
+  }
+
+  .bitcoin-card {
+    background: var(--warm-brown);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .bitcoin-card-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bitcoin-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .bitcoin-card-img::after {
+    content: '\20BF';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.2rem;
+    color: rgba(247,147,26,0.6);
+    z-index: 1;
+  }
+
+  .bitcoin-card-body {
+    padding: 1.5rem;
+  }
+
+  .bitcoin-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+
+  .bitcoin-card-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .bitcoin-card-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+  }
+
+  .bitcoin-card-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  /* ─── LIGHTBOX ─── */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(10, 8, 6, 0.96);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .lightbox.open {
+    display: flex;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 201;
+    line-height: 1;
+  }
+
+  .lightbox-close:hover {
+    color: var(--cream);
+  }
+
+  .lightbox-img-container {
+    max-width: 80vw;
+    max-height: 75vh;
+    position: relative;
+  }
+
+  .lightbox-img-container img {
+    max-width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+    border-radius: 3px;
+  }
+
+  .lightbox-info {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  .lightbox-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--cream);
+    margin-bottom: 0.3rem;
+  }
+
+  .lightbox-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(200,135,58,0.15);
+    border: 1px solid var(--border);
+    color: var(--cream);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .lightbox-nav:hover {
+    background: rgba(200,135,58,0.3);
+  }
+
+  .lightbox-prev { left: 2rem; }
+  .lightbox-next { right: 2rem; }
+
+  .lightbox-counter {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    margin-top: 0.5rem;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--warm-brown);
+    border-top: 1px solid var(--border);
+    padding: 3rem 5rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-brand p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-top: 0.8rem;
+    max-width: 28ch;
+  }
+
+  .footer-col h4 {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-col a {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-col a:hover { color: var(--cream); }
+
+  .footer-bottom {
+    background: var(--black);
+    padding: 1.2rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+  }
+
+  /* ─── SCROLL ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── HAMBURGER ─── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--cream);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--black);
+    z-index: 99;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.3s;
+  }
+  .mobile-menu a:hover { color: var(--amber); }
+  .mobile-menu .mobile-cta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem !important;
+    background: var(--amber);
+    color: var(--black) !important;
+    padding: 0.85rem 2.5rem;
+    border-radius: 2px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 1rem;
+  }
+
+  /* ─── MOBILE BREAKPOINTS ─── */
+  @media (max-width: 768px) {
+
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    .hero-left {
+      padding: 7rem 1.5rem 2.5rem;
+      order: 1;
+    }
+    .hero-right {
+      order: 2;
+      height: 50vw;
+      min-height: 220px;
+    }
+    .hero-painting-grid { padding-top: 0; position: relative; height: 100%; }
+    .hero-fade { display: none; }
+    .hero-subtitle { font-size: 1rem; max-width: 100%; }
+    .hero-actions { flex-direction: column; align-items: flex-start; }
+    .btn-primary { width: 100%; justify-content: center; }
+    .btn-ghost { align-self: center; }
+    .live-badge { font-size: 0.7rem; }
+
+    .stats-bar {
+      padding: 1.5rem 1rem;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
+    }
+    .stat-divider { display: none; }
+    .stat { width: 45%; }
+    .stat-number { font-size: 1.6rem; }
+
+    section { padding: 3rem 1.5rem; }
+
+    .gallery-header { flex-direction: column; align-items: flex-start; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .gallery-filters { gap: 0.4rem; }
+    .filter-btn { padding: 0.35rem 0.7rem; font-size: 0.72rem; }
+
+    .process-step { flex: 0 0 220px; }
+
+    .webcam-section {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .about-section {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      padding: 3rem 1.5rem 4rem;
+    }
+    .about-portrait-frame { max-height: 350px; aspect-ratio: unset; height: 350px; }
+    .about-quote-block {
+      position: relative;
+      right: auto; bottom: auto;
+      margin-top: 1rem;
+      max-width: 100%;
+    }
+    .about-text { padding-right: 0 !important; }
+    .about-credentials { grid-template-columns: 1fr 1fr; }
+
+    .commission-inner { padding: 0; }
+    .commission-form { padding: 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+
+    .bitcoin-section {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    footer {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      padding: 2.5rem 1.5rem;
+    }
+    .footer-brand { grid-column: 1 / -1; }
+    .footer-bottom {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+      padding: 1.2rem 1.5rem;
+      font-size: 0.72rem;
+    }
+
+    .lightbox-nav { width: 40px; height: 40px; font-size: 1rem; }
+    .lightbox-prev { left: 0.5rem; }
+    .lightbox-next { right: 0.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+    .stats-bar { flex-direction: column; align-items: center; }
+    .stat { width: 100%; text-align: center; }
+    footer { grid-template-columns: 1fr; }
+    .hero-right { height: 60vw; }
+    .about-credentials { grid-template-columns: 1fr; }
+    .process-step { flex: 0 0 180px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#gallery" onclick="closeMenu()">Gallery</a>
+  <a href="#process" onclick="closeMenu()">The Process</a>
+  <a href="#live" onclick="closeMenu()">Watch Live</a>
+  <a href="#about" onclick="closeMenu()">About Scott</a>
+  <a href="#bitcoin" onclick="closeMenu()">Digital Art</a>
+  <a href="#commission" class="mobile-cta" onclick="closeMenu()">Commission a Piece</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Scott's<span>Art</span></a>
+  <ul class="nav-links">
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#live">Watch Live</a></li>
+    <li><a href="#about">About Scott</a></li>
+    <li><a href="#bitcoin">Digital Art</a></li>
+    <li><a href="#commission" class="nav-cta">Commission a Piece</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding:0;">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Botanical Artist · Little Rock, AR</div>
+    <h1 class="hero-title">
+      Flowers painted<br>
+      with <em>soul</em>
+    </h1>
+    <p class="hero-subtitle">
+      Large-scale, vivid botanical paintings by Scott Carle — a physician who has spent decades finding beauty in nature's smallest details.
+    </p>
+    <div class="hero-actions">
+      <a href="#gallery" class="btn-primary">Explore the Gallery &rarr;</a>
+      <a href="#commission" class="btn-ghost">Commission a piece</a>
+    </div>
+    <a href="#live" class="live-badge">
+      <span class="live-dot"></span>
+      Studio webcam — watch Scott paint live
+    </a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-painting-grid">
+      <div class="hero-painting"><img src="images/hero/purple-anemone.jpeg" alt="Purple Anemone by Scott Carle" loading="eager"></div>
+      <div class="hero-painting"><img src="images/hero/red-poppy.jpeg" alt="Red Poppy by Scott Carle" loading="eager"></div>
+      <div class="hero-painting"><img src="images/hero/blue-passionflower.jpeg" alt="Blue Passionflower by Scott Carle" loading="eager"></div>
+      <div class="hero-painting"><img src="images/hero/parrot-tulip.jpeg" alt="Parrot Tulip by Scott Carle" loading="eager"></div>
+    </div>
+    <div class="hero-fade"></div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat">
+    <span class="stat-number">27+</span>
+    <span class="stat-label">Years painting</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat">
+    <span class="stat-number">200+</span>
+    <span class="stat-label">Original paintings</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat">
+    <span class="stat-number">Any</span>
+    <span class="stat-label">Flower, size, or color — by commission</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat">
+    <span class="stat-number">&#8383;</span>
+    <span class="stat-label">Now on Bitcoin — first Ordinal available</span>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="gallery-header">
+    <div>
+      <div class="section-label">The Work</div>
+      <h2 class="section-title">Gallery</h2>
+    </div>
+    <div class="gallery-filters">
+      <button class="filter-btn active" onclick="filterGallery('all', this)">All</button>
+      <button class="filter-btn" onclick="filterGallery('poppy', this)">Poppies</button>
+      <button class="filter-btn" onclick="filterGallery('tulip', this)">Tulips</button>
+      <button class="filter-btn" onclick="filterGallery('lily', this)">Lilies</button>
+      <button class="filter-btn" onclick="filterGallery('passionflower', this)">Passionflower</button>
+      <button class="filter-btn" onclick="filterGallery('daisy', this)">Daisies</button>
+      <button class="filter-btn" onclick="filterGallery('other', this)">Other</button>
+    </div>
+  </div>
+
+  <div class="gallery-grid" id="galleryGrid">
+
+    <div class="gallery-card" data-tags="daisy" data-name="Purple Anemone" data-meta="Oil on canvas · 2018" data-src="images/gallery/purple-anemone.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/purple-anemone.jpeg" alt="Purple Anemone" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">Purple Anemone</div>
+      <div class="gallery-card-meta">Oil on canvas · 2018</div>
+    </div>
+
+    <div class="gallery-card" data-tags="poppy" data-name="Red Poppy" data-meta="Oil on canvas · 2018" data-src="images/gallery/red-poppy.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/red-poppy.jpeg" alt="Red Poppy" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">Red Poppy</div>
+      <div class="gallery-card-meta">Oil on canvas · 2018</div>
+    </div>
+
+    <div class="gallery-card" data-tags="poppy" data-name="Red Poppy II" data-meta="Oil on canvas · 2018" data-src="images/gallery/red-poppy-blue-stamens.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/red-poppy-blue-stamens.jpeg" alt="Red Poppy II" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">Red Poppy II</div>
+      <div class="gallery-card-meta">Oil on canvas · 2018</div>
+    </div>
+
+    <div class="gallery-card" data-tags="tulip" data-name="Parrot Tulip" data-meta="Oil on canvas · 2011" data-src="images/gallery/parrot-tulip.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/parrot-tulip.jpeg" alt="Parrot Tulip" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">Parrot Tulip</div>
+      <div class="gallery-card-meta">Oil on canvas · 2011</div>
+    </div>
+
+    <div class="gallery-card" data-tags="tulip" data-name="Red &amp; White Tulip" data-meta="Oil on canvas · 2013" data-src="images/gallery/red-white-tulip.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/red-white-tulip.jpeg" alt="Red & White Tulip" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">Red &amp; White Tulip</div>
+      <div class="gallery-card-meta">Oil on canvas · 2013</div>
+    </div>
+
+    <div class="gallery-card" data-tags="tulip" data-name="Red &amp; White Tulip II" data-meta="Oil on canvas · 2013" data-src="images/gallery/red-white-tulip-full.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/red-white-tulip-full.jpeg" alt="Red & White Tulip II" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">Red &amp; White Tulip II</div>
+      <div class="gallery-card-meta">Oil on canvas · 2013</div>
+    </div>
+
+    <div class="gallery-card" data-tags="passionflower" data-name="Blue Passionflower" data-meta="Oil on canvas · 2013" data-src="images/gallery/blue-passionflower.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/blue-passionflower.jpeg" alt="Blue Passionflower" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">Blue Passionflower</div>
+      <div class="gallery-card-meta">Oil on canvas · 2013</div>
+    </div>
+
+    <div class="gallery-card" data-tags="passionflower" data-name="Passionflower Center" data-meta="Oil on canvas · 2013 · Detail" data-src="images/gallery/passionflower-center.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/passionflower-center.jpeg" alt="Passionflower Center" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">Passionflower Center</div>
+      <div class="gallery-card-meta">Oil on canvas · 2013 · Detail</div>
+    </div>
+
+    <div class="gallery-card" data-tags="lily" data-name="Grey Lily" data-meta="Oil on canvas · Grisaille · 2018" data-src="images/gallery/grey-lily-grisaille.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/grey-lily-grisaille.jpeg" alt="Grey Lily" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">Grey Lily</div>
+      <div class="gallery-card-meta">Oil on canvas · Grisaille · 2018</div>
+    </div>
+
+    <div class="gallery-card" data-tags="lily" data-name="Red Calla Lily" data-meta="Oil on canvas · 2011" data-src="images/gallery/red-calla-lily.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/red-calla-lily.jpeg" alt="Red Calla Lily" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">Red Calla Lily</div>
+      <div class="gallery-card-meta">Oil on canvas · 2011</div>
+    </div>
+
+    <div class="gallery-card" data-tags="other" data-name="Crimson Dahlia" data-meta="Oil on canvas · 2011" data-src="images/gallery/crimson-dahlia-spiral.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/crimson-dahlia-spiral.jpeg" alt="Crimson Dahlia" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">Crimson Dahlia</div>
+      <div class="gallery-card-meta">Oil on canvas · 2011</div>
+    </div>
+
+    <div class="gallery-card" data-tags="other" data-name="Red Dahlia with Water Drops" data-meta="Oil on canvas · 2011" data-src="images/gallery/red-dahlia-waterdrops.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/red-dahlia-waterdrops.jpeg" alt="Red Dahlia with Water Drops" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">Red Dahlia with Water Drops</div>
+      <div class="gallery-card-meta">Oil on canvas · 2011</div>
+    </div>
+
+    <div class="gallery-card" data-tags="other" data-name="Surreal Flower" data-meta="Oil on canvas · 2011" data-src="images/gallery/surreal-multicolor-flower.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/surreal-multicolor-flower.jpeg" alt="Surreal Flower" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">Surreal Flower</div>
+      <div class="gallery-card-meta">Oil on canvas · 2011</div>
+    </div>
+
+    <div class="gallery-card" data-tags="other" data-name="White Orange Blossom" data-meta="Oil on canvas · 2018" data-src="images/gallery/white-orange-blossom.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/white-orange-blossom.jpeg" alt="White Orange Blossom" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">White Orange Blossom</div>
+      <div class="gallery-card-meta">Oil on canvas · 2018</div>
+    </div>
+
+    <div class="gallery-card" data-tags="daisy" data-name="White &amp; Lavender Daisy" data-meta="Oil on canvas · 2018" data-src="images/gallery/white-lavender-daisy.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/white-lavender-daisy.jpeg" alt="White & Lavender Daisy" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">White &amp; Lavender Daisy</div>
+      <div class="gallery-card-meta">Oil on canvas · 2018</div>
+    </div>
+
+    <div class="gallery-card" data-tags="other" data-name="Red Flower Center" data-meta="Oil on canvas · 2018 · Detail" data-src="images/gallery/red-flower-center-detail.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/red-flower-center-detail.jpeg" alt="Red Flower Center Detail" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">Red Flower Center</div>
+      <div class="gallery-card-meta">Oil on canvas · 2018 · Detail</div>
+    </div>
+
+    <div class="gallery-card" data-tags="poppy" data-name="Yellow Poppy Center" data-meta="Oil on canvas · 2011 · Detail" data-src="images/gallery/yellow-poppy-center.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/yellow-poppy-center.jpeg" alt="Yellow Poppy Center" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">Yellow Poppy Center</div>
+      <div class="gallery-card-meta">Oil on canvas · 2011 · Detail</div>
+    </div>
+
+    <div class="gallery-card" data-tags="other" data-name="Sunflower Center" data-meta="Oil on canvas · 2011 · Detail" data-src="images/gallery/sunflower-center.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/sunflower-center.jpeg" alt="Sunflower Center" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">Sunflower Center</div>
+      <div class="gallery-card-meta">Oil on canvas · 2011 · Detail</div>
+    </div>
+
+    <div class="gallery-card" data-tags="tulip" data-name="Tulip Center" data-meta="Oil on canvas · 2013 · Detail" data-src="images/gallery/tulip-center-detail.jpeg" onclick="openLightbox(this)">
+      <div class="gallery-card-img">
+        <img src="images/gallery/thumbs/tulip-center-detail.jpeg" alt="Tulip Center Detail" loading="lazy">
+        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
+      </div>
+      <div class="gallery-card-name">Tulip Center</div>
+      <div class="gallery-card-meta">Oil on canvas · 2013 · Detail</div>
+    </div>
+
+  </div>
+
+  <div class="gallery-view-all">
+    <a href="https://www.scottsart.com" class="btn-primary" target="_blank">View all 200+ paintings at ScottsArt.com &rarr;</a>
+  </div>
+</section>
+
+<!-- THE PROCESS -->
+<section class="process-section" id="process">
+  <div class="reveal">
+    <div class="section-label">Behind the Canvas</div>
+    <h2 class="section-title">The Process</h2>
+    <p class="section-body">
+      Every painting begins on a black canvas with a simple pencil outline. Over days and weeks, vivid color emerges from the darkness — layer by careful layer.
+    </p>
+  </div>
+
+  <div class="process-strip">
+    <div class="process-step">
+      <img src="images/process/01-tulip-sketch.jpeg" alt="Step 1: Initial sketch on canvas" loading="lazy">
+      <div class="process-step-label">Step 1</div>
+      <div class="process-step-caption">Initial sketch on black canvas</div>
+    </div>
+    <div class="process-arrow">&rarr;</div>
+    <div class="process-step">
+      <img src="images/process/02-tulip-early.jpeg" alt="Step 2: Early color blocking" loading="lazy">
+      <div class="process-step-label">Step 2</div>
+      <div class="process-step-caption">First layers of color emerge</div>
+    </div>
+    <div class="process-arrow">&rarr;</div>
+    <div class="process-step">
+      <img src="images/process/03-tulip-mid.jpeg" alt="Step 3: Building depth" loading="lazy">
+      <div class="process-step-label">Step 3</div>
+      <div class="process-step-caption">Building depth and dimension</div>
+    </div>
+    <div class="process-arrow">&rarr;</div>
+    <div class="process-step">
+      <img src="images/process/04-tulip-detail.jpeg" alt="Step 4: Fine detail work" loading="lazy">
+      <div class="process-step-label">Step 4</div>
+      <div class="process-step-caption">Fine detail and texture work</div>
+    </div>
+    <div class="process-arrow">&rarr;</div>
+    <div class="process-step">
+      <img src="images/process/05-tulip-finished.jpeg" alt="Step 5: Finished painting" loading="lazy">
+      <div class="process-step-label">Finished</div>
+      <div class="process-step-caption">The completed Red &amp; White Tulip</div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE WEBCAM -->
+<section class="webcam-section" id="live">
+  <div class="reveal">
+    <div class="section-label">Studio</div>
+    <h2 class="section-title">Watch Scott paint — live</h2>
+    <p class="section-body">
+      Scott opens his studio to the world through a live webcam. Catch him mid-brushstroke on weekend mornings or spontaneous evening sessions.
+    </p>
+
+    <div class="webcam-schedule">
+      <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--amber);margin-bottom:0.4rem;">Typical painting times</div>
+      <div class="schedule-item">
+        <span class="schedule-dot"></span>
+        Weekend mornings — early sessions, most reliable
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-dot"></span>
+        Random evenings throughout the week
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-dot"></span>
+        Sometimes late night — when inspiration strikes
+      </div>
+    </div>
+
+    <a href="https://scottswebcam.com" class="btn-primary" style="margin-top:2rem;display:inline-flex;" target="_blank">
+      Open live webcam &rarr;
+    </a>
+  </div>
+
+  <div>
+    <div class="webcam-frame">
+      <div class="webcam-inner">
+        <img src="images/studio/poppy-on-easel.jpeg" alt="Scott's painting studio" loading="lazy">
+        <div class="webcam-overlay">
+          <div class="webcam-overlay-icon">&#9654;</div>
+          <div class="webcam-overlay-text">Click to watch live</div>
+        </div>
+      </div>
+      <div class="webcam-live-pill">
+        <span class="live-dot"></span> Live
+      </div>
+      <div class="webcam-corner">ScottsWebcam.com</div>
+    </div>
+    <p style="font-size:0.75rem;color:var(--text-muted);text-align:center;margin-top:0.8rem;letter-spacing:0.05em;">
+      Webcam active during painting sessions · No login required
+    </p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="about-portrait reveal">
+    <div class="about-portrait-frame">
+      <img src="images/about/scott-portrait.jpg" alt="Scott Carle, botanical artist" loading="lazy">
+    </div>
+    <div class="about-quote-block">
+      <p class="about-quote">"Painting is an opportunity to create images without rules or timelines."</p>
+      <div class="about-quote-attr">— Scott Carle, M.D.</div>
+    </div>
+  </div>
+
+  <div class="about-text reveal" style="padding-right:2rem;">
+    <div class="section-label">The Artist</div>
+    <h2 class="section-title">Meet Scott</h2>
+    <p>
+      Scott Carle has been painting since the age of nine, inspired by his grandfather <strong>A.P. Finken</strong> — a celebrated artist known for his religious and wildlife paintings.
+    </p>
+    <p>
+      By day, Scott has practiced <strong>Occupational Medicine in Central Arkansas for over 35 years</strong>. By choice, he paints. His signature: a black canvas, then vivid, dimensional flowers that seem to grow out of the darkness.
+    </p>
+    <p>
+      His work blends a scientist's eye for structure with an artist's complete freedom. No two paintings are alike. No flower is ordinary.
+    </p>
+
+    <div class="about-credentials">
+      <div class="credential">
+        <div class="credential-title">Based in</div>
+        <div class="credential-value">Little Rock, AR</div>
+      </div>
+      <div class="credential">
+        <div class="credential-title">Painting since</div>
+        <div class="credential-value">Age 9</div>
+      </div>
+      <div class="credential">
+        <div class="credential-title">Specialty</div>
+        <div class="credential-value">Botanical art</div>
+      </div>
+      <div class="credential">
+        <div class="credential-title">Also a</div>
+        <div class="credential-value">Physician, M.D.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMISSION -->
+<section class="commission-section" id="commission">
+  <div class="commission-inner reveal">
+    <div class="section-label" style="justify-content:center;">Commissions</div>
+    <h2 class="section-title">Your flower. Your colors. Your size.</h2>
+    <p class="section-body" style="margin:0 auto 0;">
+      Scott will paint any flower, any size, any color — and ship it anywhere. Tell him what you're imagining.
+    </p>
+
+    <form class="commission-form" action="mailto:Scott@ScottsArt.com" method="post" enctype="text/plain">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Smith">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="jane@example.com">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="flower">Flower (if known)</label>
+          <input type="text" id="flower" name="flower" placeholder="e.g. Red rose, sunflower, peony...">
+        </div>
+        <div class="form-group">
+          <label for="size">Approximate size</label>
+          <select id="size" name="size">
+            <option>Small (under 24 in)</option>
+            <option>Medium (24-48 in)</option>
+            <option>Large (48-72 in)</option>
+            <option>Extra large (72+ in)</option>
+            <option>Not sure — let's talk</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="vision">Tell Scott about your vision</label>
+        <textarea id="vision" name="vision" placeholder="Colors, mood, where it'll hang, who it's for — anything helps..."></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Send inquiry &rarr;</button>
+    </form>
+  </div>
+</section>
+
+<!-- BITCOIN / DIGITAL -->
+<section class="bitcoin-section" id="bitcoin">
+  <div class="reveal">
+    <div class="bitcoin-badge">&#8383; On Bitcoin</div>
+    <div class="section-label">Digital Offerings</div>
+    <h2 class="section-title">Art that lives forever — on Bitcoin</h2>
+    <p class="section-body">
+      Encouraged by his son Chris, Scott is now inscribing select paintings permanently onto the Bitcoin blockchain as Ordinals. Physical painting and digital inscription — sold together.
+    </p>
+    <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:2rem;">
+      Now showing at the <strong style="color:var(--cream)">Bitcoin Museum Nashville</strong> in partnership with <strong style="color:var(--cream)">@SatoshiHouseArt</strong>.
+    </p>
+    <a href="https://x.com/ScottCarleArt/status/1935693589075345630" class="btn-primary" target="_blank">See the Ordinal auction &rarr;</a>
+  </div>
+
+  <div class="bitcoin-card reveal">
+    <div class="bitcoin-card-img">
+      <img src="images/gallery/surreal-multicolor-flower.jpeg" alt="Scott Carle's first Bitcoin Ordinal inscription" loading="lazy">
+    </div>
+    <div class="bitcoin-card-body">
+      <div class="bitcoin-card-title">First Ordinal Inscription</div>
+      <div class="bitcoin-card-desc">
+        A dimensional exploration of nature's beauty — Scott's first piece inscribed on Bitcoin. A 4MB inscription. Physical painting included. Auction via SatoshiHouseArt.
+      </div>
+      <div class="bitcoin-card-meta">
+        <span>&#8383; Bitcoin Ordinal</span>
+        <span>· 4MB inscription</span>
+        <span>· 1 of 1</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div class="nav-logo" style="font-size:1.3rem;">Scott's<span style="color:var(--amber);font-style:italic;">Art</span></div>
+    <p>Botanical paintings by Scott Carle, M.D. — Little Rock, Arkansas. Painting since 1998.</p>
+    <div style="margin-top:1.2rem;font-size:0.8rem;color:var(--text-muted);">501-960-4137 · <a href="mailto:Scott@ScottsArt.com" style="color:var(--amber);text-decoration:none;">Scott@ScottsArt.com</a></div>
+  </div>
+
+  <div class="footer-col">
+    <h4>Gallery</h4>
+    <ul>
+      <li><a href="#gallery">All paintings</a></li>
+      <li><a href="https://www.scottsart.com" target="_blank">Full archive</a></li>
+      <li><a href="#process">The process</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col">
+    <h4>Connect</h4>
+    <ul>
+      <li><a href="https://scottswebcam.com" target="_blank">Watch live (webcam)</a></li>
+      <li><a href="#commission">Commission a painting</a></li>
+      <li><a href="https://instagram.com/scottsart" target="_blank">Instagram</a></li>
+      <li><a href="https://facebook.com/scottsart" target="_blank">Facebook</a></li>
+      <li><a href="https://x.com/ScottCarleArt" target="_blank">Twitter / X</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col">
+    <h4>Digital</h4>
+    <ul>
+      <li><a href="#bitcoin">Bitcoin Ordinals</a></li>
+      <li><a href="https://x.com/ScottCarleArt/status/1935693589075345630" target="_blank">SatoshiHouseArt auction</a></li>
+      <li><a href="https://museum.b.tc" target="_blank">Bitcoin Museum Nashville</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  <span>&copy; 2026 Scott Carle. All artwork is the exclusive property of Scott Carle. All rights reserved.</span>
+  <span>Little Rock, AR 72223</span>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#8249;</button>
+  <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#8250;</button>
+  <div class="lightbox-img-container">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+  <div class="lightbox-info">
+    <div class="lightbox-title" id="lightboxTitle"></div>
+    <div class="lightbox-meta" id="lightboxMeta"></div>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+</div>
+
+<script>
+  // ─── MOBILE MENU ───
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('hamburger');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ─── GALLERY FILTER ───
+  function filterGallery(tag, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cards = document.querySelectorAll('.gallery-card');
+    cards.forEach(card => {
+      if (tag === 'all') {
+        card.classList.remove('hidden');
+      } else {
+        const tags = card.getAttribute('data-tags') || '';
+        if (tags.includes(tag)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      }
+    });
+  }
+
+  // ─── LIGHTBOX ───
+  let currentLightboxIndex = 0;
+  let lightboxCards = [];
+
+  function getVisibleCards() {
+    return Array.from(document.querySelectorAll('.gallery-card:not(.hidden)'));
+  }
+
+  function openLightbox(cardEl) {
+    lightboxCards = getVisibleCards();
+    currentLightboxIndex = lightboxCards.indexOf(cardEl);
+    if (currentLightboxIndex === -1) currentLightboxIndex = 0;
+    showLightboxSlide();
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function navigateLightbox(dir) {
+    currentLightboxIndex += dir;
+    if (currentLightboxIndex < 0) currentLightboxIndex = lightboxCards.length - 1;
+    if (currentLightboxIndex >= lightboxCards.length) currentLightboxIndex = 0;
+    showLightboxSlide();
+  }
+
+  function showLightboxSlide() {
+    const card = lightboxCards[currentLightboxIndex];
+    const src = card.getAttribute('data-src');
+    const name = card.getAttribute('data-name');
+    const meta = card.getAttribute('data-meta');
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxImg').alt = name;
+    document.getElementById('lightboxTitle').textContent = name;
+    document.getElementById('lightboxMeta').textContent = meta;
+    document.getElementById('lightboxCounter').textContent =
+      (currentLightboxIndex + 1) + ' / ' + lightboxCards.length;
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    const lb = document.getElementById('lightbox');
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navigateLightbox(-1);
+    if (e.key === 'ArrowRight') navigateLightbox(1);
+  });
+
+  // Click outside to close
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+
+  // ─── SCROLL REVEAL ───
+  const revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    revealObserver.observe(el);
+  });
+</script>
+</body>
+</html>

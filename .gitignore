@@ -1,0 +1,11 @@
+# Original raw photos (too large for git)
+Scotts Photos of Physical Art and misc Projects/
+*.ARW
+*.arw
+
+# Backup files
+scottsart-mockup-backup.html
+scottsart-mockup.html
+
+# macOS
+.DS_Store
