@@ -24,6 +24,10 @@
     --text: #f0e8dc;
     --text-muted: #a09080;
     --border: rgba(200,135,58,0.2);
+    --cream-bg: #f5efe6;
+    --cream-bg-alt: #ebe3d7;
+    --dark-text: #2e2119;
+    --dark-text-muted: #6b5d50;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -232,9 +236,26 @@
     margin: 0 auto;
   }
 
+  /* ─── LIGHT SECTIONS ─── */
+  .light-section { background: var(--cream-bg) !important; color: var(--dark-text); }
+  .light-section .section-label { color: var(--amber); }
+  .light-section .section-label::before { background: var(--amber); }
+  .light-section .section-title { color: var(--dark-text); }
+  .light-section .section-body { color: var(--dark-text-muted); }
+  .light-section .about-bio { color: var(--dark-text-muted); }
+  .light-section .about-bio strong { color: var(--dark-text); }
+  .light-section .about-bio em { color: var(--amber); }
+  .light-section .btn-primary { background: var(--dark-text); color: var(--cream-bg); }
+  .light-section .btn-primary:hover { background: var(--amber); color: var(--black); }
+  .light-section .credential-label { color: var(--amber); }
+  .light-section .credential-value { color: var(--dark-text); }
+  .light-section .credential-icon { color: var(--amber); }
+  .light-section .credential-card { background: #fff; border-color: rgba(46,33,25,0.12); }
+  .light-section .credential-card:hover { border-color: var(--amber); }
+  .light-section .about-portrait-frame::after { border-color: rgba(46,33,25,0.15); }
+
   /* ─── ABOUT CONTENT ─── */
   .about-section {
-    background: var(--dark);
     padding: 6rem 5rem;
   }
 
@@ -370,7 +391,6 @@
 
   /* ─── CREDENTIALS GRID ─── */
   .credentials-section {
-    background: var(--warm-brown);
     padding: 5rem;
   }
 
@@ -455,7 +475,6 @@
 
   /* ─── CTA BANNER ─── */
   .cta-banner {
-    background: var(--dark);
     border-top: 1px solid var(--border);
     padding: 5rem;
     text-align: center;
@@ -640,7 +659,7 @@
 </section>
 
 <!-- ABOUT CONTENT -->
-<section class="about-section">
+<section class="about-section light-section">
   <div class="about-grid">
 
     <!-- Portrait -->
@@ -719,7 +738,7 @@
 </section>
 
 <!-- CREDENTIALS -->
-<section class="credentials-section">
+<section class="credentials-section light-section" style="background:var(--cream-bg-alt) !important;">
   <div class="credentials-header reveal">
     <div class="section-label">At a Glance</div>
     <h2 class="section-title">The Artist &amp; The Physician</h2>
@@ -761,7 +780,7 @@
 </section>
 
 <!-- CTA BANNER -->
-<section class="cta-banner">
+<section class="cta-banner light-section">
   <div class="reveal">
     <div class="section-label">Work with Scott</div>
     <h2 class="section-title">Commission a Painting</h2>

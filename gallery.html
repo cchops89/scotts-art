@@ -17,6 +17,10 @@
     --text: #f0e8dc;
     --text-muted: #a09080;
     --border: rgba(200,135,58,0.2);
+    --cream-bg: #f5efe6;
+    --cream-bg-alt: #ebe3d7;
+    --dark-text: #2e2119;
+    --dark-text-muted: #6b5d50;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -45,7 +49,14 @@
   .mobile-menu .mobile-cta { font-family: 'DM Sans', sans-serif; font-size: 0.9rem !important; background: var(--amber); color: var(--black) !important; padding: 0.85rem 2.5rem; border-radius: 2px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 1rem; }
 
   /* PAGE HEADER */
-  .page-header { padding: 8rem 5rem 3rem; background: var(--dark); border-bottom: 1px solid var(--border); }
+  /* LIGHT SECTIONS */
+  .light-section { background: var(--cream-bg) !important; color: var(--dark-text); }
+  .light-section .section-label { color: var(--amber); }
+  .light-section .section-label::before { background: var(--amber); }
+  .light-section .section-title { color: var(--dark-text); }
+  .light-section .section-body { color: var(--dark-text-muted); }
+
+  .page-header { padding: 8rem 5rem 3rem; border-bottom: 1px solid var(--border); }
   .section-label { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; }
   .section-label::before { content: ''; display: inline-block; width: 1.5rem; height: 1px; background: var(--amber); }
   .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--cream); line-height: 1.2; margin-bottom: 1rem; }
@@ -150,7 +161,7 @@
   </button>
 </nav>
 
-<div class="page-header">
+<div class="page-header light-section">
   <div class="section-label">The Work</div>
   <h1 class="section-title">Gallery</h1>
   <p class="section-body">Over 200 original oil paintings spanning 25 years — every flower emerges from darkness on a black canvas.</p>

@@ -24,6 +24,10 @@
     --text: #f0e8dc;
     --text-muted: #a09080;
     --border: rgba(200,135,58,0.2);
+    --cream-bg: #f5efe6;
+    --cream-bg-alt: #ebe3d7;
+    --dark-text: #2e2119;
+    --dark-text-muted: #6b5d50;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -409,9 +413,27 @@
     margin-top: 3rem;
   }
 
+  /* ─── LIGHT SECTIONS ─── */
+  .light-section { background: var(--cream-bg) !important; color: var(--dark-text); }
+  .light-section .section-label { color: var(--amber); }
+  .light-section .section-label::before { background: var(--amber); }
+  .light-section .section-title { color: var(--dark-text); }
+  .light-section .section-body { color: var(--dark-text-muted); }
+  .light-section .btn-primary { background: var(--dark-text); color: var(--cream-bg); }
+  .light-section .btn-primary:hover { background: var(--amber); color: var(--black); }
+  .light-section .form-group label { color: var(--dark-text-muted); }
+  .light-section .form-group input,
+  .light-section .form-group textarea,
+  .light-section .form-group select { background: rgba(46,33,25,0.08); border-color: rgba(46,33,25,0.2); color: var(--dark-text); }
+  .light-section .form-group input:focus,
+  .light-section .form-group textarea:focus,
+  .light-section .form-group select:focus { border-color: var(--amber); }
+  .light-section .form-group select option { background: var(--cream-bg); color: var(--dark-text); }
+  .light-section .form-group input::placeholder,
+  .light-section .form-group textarea::placeholder { color: var(--dark-text-muted); opacity: 0.6; }
+
   /* ─── COMMISSION ─── */
   .commission-section {
-    background: var(--dark);
     text-align: center;
     border-top: 1px solid var(--border);
   }
@@ -422,8 +444,8 @@
   }
 
   .commission-form {
-    background: var(--warm-brown);
-    border: 1px solid var(--border);
+    background: var(--cream-bg-alt);
+    border: 1px solid rgba(46,33,25,0.15);
     border-radius: 4px;
     padding: 2.5rem;
     margin-top: 2.5rem;
@@ -806,7 +828,7 @@
 </section>
 
 <!-- COMMISSION -->
-<section class="commission-section" id="commission">
+<section class="commission-section light-section" id="commission">
   <div class="commission-inner reveal">
     <div class="section-label" style="justify-content:center;">Commissions</div>
     <h2 class="section-title">Your flower. Your colors. Your size.</h2>
