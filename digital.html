@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Art — Bitcoin Ordinals by Scott Carle</title>
+<meta name="description" content="Scott Carle's botanical paintings inscribed as Bitcoin Ordinals. Physical painting and digital inscription — sold together. Partnership with Bitcoin Museum Nashville.">
+<meta property="og:title" content="Digital Art — Bitcoin Ordinals by Scott Carle">
+<meta property="og:description" content="Art that lives forever on Bitcoin. Scott's botanical paintings permanently inscribed as Ordinals.">
+<meta property="og:image" content="images/scottsordinal.png">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0e0c0a;
+    --dark: #1a1612;
+    --warm-brown: #2e2119;
+    --amber: #c8873a;
+    --amber-light: #e8a85a;
+    --cream: #f5efe6;
+    --cream-dark: #e8ddd0;
+    --sage: #7a8c6e;
+    --rust: #a04a2a;
+    --text: #f0e8dc;
+    --text-muted: #a09080;
+    --border: rgba(200,135,58,0.2);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(14,12,10,0.95), transparent);
+    backdrop-filter: blur(4px);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-logo span {
+    color: var(--amber);
+    font-style: italic;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--amber); }
+  .nav-links a.active { color: var(--amber); }
+
+  .nav-cta {
+    background: var(--amber);
+    color: var(--black) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 2px;
+    font-weight: 500 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    transition: background 0.3s !important;
+  }
+
+  .nav-cta:hover { background: var(--amber-light) !important; color: var(--black) !important; }
+
+  /* ─── SECTION COMMON ─── */
+  section { padding: 5rem 5rem; }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--amber);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .section-body {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    max-width: 50ch;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ─── BUTTONS ─── */
+  .btn-primary {
+    background: var(--amber);
+    color: var(--black);
+    padding: 0.85rem 2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn-primary:hover {
+    background: var(--amber-light);
+    transform: translateY(-1px);
+  }
+
+  /* ─── DIGITAL PAGE ─── */
+  .digital-hero {
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+  }
+
+  .bitcoin-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(247,147,26,0.1);
+    border: 1px solid rgba(247,147,26,0.3);
+    color: #f7931a;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+  }
+
+  .digital-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .digital-text {
+    padding-top: 1rem;
+  }
+
+  .digital-note {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    padding: 1.2rem 1.5rem;
+    background: rgba(200,135,58,0.05);
+    border-left: 2px solid var(--border);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .digital-note a {
+    color: var(--amber);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .digital-note a:hover {
+    color: var(--amber-light);
+  }
+
+  /* ─── ORDINAL CARD ─── */
+  .ordinal-card {
+    background: var(--warm-brown);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .ordinal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+
+  .ordinal-card-image {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--dark);
+  }
+
+  .ordinal-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .ordinal-card:hover .ordinal-card-image img {
+    transform: scale(1.03);
+  }
+
+  .ordinal-btc-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 42px;
+    height: 42px;
+    background: rgba(247,147,26,0.15);
+    border: 1px solid rgba(247,147,26,0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: #f7931a;
+    font-weight: 600;
+    z-index: 2;
+    backdrop-filter: blur(4px);
+  }
+
+  .ordinal-card-body {
+    padding: 1.8rem 2rem;
+  }
+
+  .ordinal-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--cream);
+    margin-bottom: 0.8rem;
+  }
+
+  .ordinal-card-desc {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+
+  .ordinal-card-meta {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .ordinal-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--amber);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, gap 0.3s;
+  }
+
+  .ordinal-card-link:hover {
+    color: var(--amber-light);
+    gap: 0.7rem;
+  }
+
+  /* ─── CTA AREA ─── */
+  .digital-cta-area {
+    margin-top: 2rem;
+  }
+
+  /* ─── SCROLL ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── HAMBURGER ─── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--cream);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--black);
+    z-index: 99;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.3s;
+  }
+  .mobile-menu a:hover { color: var(--amber); }
+  .mobile-menu .mobile-cta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem !important;
+    background: var(--amber);
+    color: var(--black) !important;
+    padding: 0.85rem 2.5rem;
+    border-radius: 2px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 1rem;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--warm-brown);
+    border-top: 1px solid var(--border);
+    padding: 3rem 5rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-brand p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-top: 0.8rem;
+    max-width: 28ch;
+  }
+
+  .footer-col h4 {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-col a {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-col a:hover { color: var(--cream); }
+
+  .footer-bottom {
+    background: var(--black);
+    padding: 1.2rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+  }
+
+  /* ─── MOBILE BREAKPOINTS ─── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+
+    section { padding: 3rem 1.5rem; }
+
+    .digital-hero { padding-top: 6rem; padding-bottom: 3rem; }
+
+    .digital-layout {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .digital-text { padding-top: 0; }
+
+    .ordinal-card-body { padding: 1.5rem; }
+
+    footer {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      padding: 2.5rem 1.5rem;
+    }
+    .footer-brand { grid-column: 1 / -1; }
+    .footer-bottom {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+      padding: 1.2rem 1.5rem;
+      font-size: 0.72rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    footer { grid-template-columns: 1fr; }
+    .ordinal-btc-badge { width: 36px; height: 36px; font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="gallery.html" onclick="closeMenu()">Gallery</a>
+  <a href="live.html" onclick="closeMenu()">Watch Live</a>
+  <a href="about.html" onclick="closeMenu()">About Scott</a>
+  <a href="digital.html" onclick="closeMenu()">Digital Art</a>
+  <a href="index.html#commission" class="mobile-cta" onclick="closeMenu()">Commission a Piece</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Scott's<span>Art</span></a>
+  <ul class="nav-links">
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="live.html">Watch Live</a></li>
+    <li><a href="about.html">About Scott</a></li>
+    <li><a href="digital.html" class="active">Digital Art</a></li>
+    <li><a href="index.html#commission" class="nav-cta">Commission a Piece</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- DIGITAL ART SECTION -->
+<section class="digital-hero">
+  <div class="digital-layout">
+
+    <!-- LEFT: TEXT -->
+    <div class="digital-text reveal">
+      <div class="bitcoin-badge">&bitcoin; On Bitcoin</div>
+      <div class="section-label">Digital Offerings</div>
+      <h1 class="section-title" style="font-size:clamp(2.4rem,4vw,3.5rem);">Art that lives forever &mdash; on Bitcoin</h1>
+      <p class="section-body">
+        Encouraged by his son Chris, Scott is now inscribing select paintings permanently onto Bitcoins as Ordinals. Physical painting and digital inscription &mdash; sold together.
+      </p>
+
+      <div class="digital-note">
+        Scott is partnering with the Bitcoin Museum in Nashville through <a href="https://x.com/SatoshiHouseArt" target="_blank">@SatoshiHouseArt</a> and <a href="https://x.com/BMAG_HQ" target="_blank">@BMAG_HQ</a> to bring fine botanical art to the Bitcoin community.
+      </div>
+
+      <div class="digital-cta-area">
+        <a href="https://x.com/ScottCarleArt/status/1935693589075345630" target="_blank" class="btn-primary">See the Ordinal auction &rarr;</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: ORDINAL CARD -->
+    <div class="reveal">
+      <div class="ordinal-card">
+        <div class="ordinal-card-image">
+          <img src="images/scottsordinal.png" alt="Scott Carle's first Bitcoin Ordinal inscription — botanical painting">
+          <div class="ordinal-btc-badge">&bitcoin;</div>
+        </div>
+        <div class="ordinal-card-body">
+          <div class="ordinal-card-title">First Ordinal Inscription</div>
+          <p class="ordinal-card-desc">
+            A dimensional exploration of nature's beauty &mdash; Scott's first piece inscribed on Bitcoin. A 4MB inscription. Physical painting included. Auction via SatoshiHouseArt.
+          </p>
+          <div class="ordinal-card-meta">&bitcoin; Bitcoin Ordinal &middot; 4MB inscription &middot; 1 of 1</div>
+          <a href="https://www.ord.io/97602690" target="_blank" class="ordinal-card-link">View on-chain &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div class="nav-logo" style="font-size:1.3rem;">Scott's<span style="color:var(--amber);font-style:italic;">Art</span></div>
+    <p>Botanical paintings by Scott Carle, M.D. — Little Rock, Arkansas. Painting since 1998.</p>
+    <div style="margin-top:1.2rem;font-size:0.8rem;color:var(--text-muted);">501-960-4137 &middot; <a href="mailto:Scott@ScottsArt.com" style="color:var(--amber);text-decoration:none;">Scott@ScottsArt.com</a></div>
+  </div>
+
+  <div class="footer-col">
+    <h4>Explore</h4>
+    <ul>
+      <li><a href="gallery.html">Full gallery</a></li>
+      <li><a href="about.html">About Scott</a></li>
+      <li><a href="live.html">Watch live</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col">
+    <h4>Connect</h4>
+    <ul>
+      <li><a href="live.html">Watch live (webcam)</a></li>
+      <li><a href="index.html#commission">Commission a painting</a></li>
+      <li><a href="https://instagram.com/scottsart" target="_blank">Instagram</a></li>
+      <li><a href="https://facebook.com/scottsart" target="_blank">Facebook</a></li>
+      <li><a href="https://x.com/ScottCarleArt" target="_blank">Twitter / X</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col">
+    <h4>Digital</h4>
+    <ul>
+      <li><a href="digital.html">Bitcoin Ordinals</a></li>
+      <li><a href="https://x.com/ScottCarleArt/status/1935693589075345630" target="_blank">SatoshiHouseArt auction</a></li>
+      <li><a href="https://museum.b.tc" target="_blank">Bitcoin Museum Nashville</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  <span>&copy; 2026 Scott Carle. All artwork is the exclusive property of Scott Carle. All rights reserved.</span>
+  <span>Little Rock, AR 72223</span>
+</div>
+
+<script>
+  // ─── MOBILE MENU ───
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('hamburger');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ─── SCROLL REVEAL ───
+  const revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    revealObserver.observe(el);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Process — Scott's Botanical Art</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #0e0c0a;
+            --dark: #1a1612;
+            --warm-brown: #2e2119;
+            --amber: #c8873a;
+            --amber-light: #e8a85a;
+            --cream: #f5efe6;
+            --text: #f0e8dc;
+            --text-muted: #a09080;
+            --border: rgba(200, 135, 58, 0.2);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--black);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Navigation ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.25rem 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(14, 12, 10, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: background 0.3s ease;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--cream);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-logo span {
+            color: var(--amber);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            text-decoration: none;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--amber-light);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--amber);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ── Hamburger ── */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1100;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--cream);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ── Mobile Menu ── */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(14, 12, 10, 0.97);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            z-index: 1050;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .mobile-menu a {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--amber-light);
+        }
+
+        /* ── Page Header ── */
+        .page-header {
+            padding: 10rem 2.5rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--amber);
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            margin-bottom: 1.25rem;
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-label::before,
+        .section-label::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .section-label::before {
+            right: calc(100% + 14px);
+        }
+
+        .section-label::after {
+            left: calc(100% + 14px);
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-weight: 400;
+            color: var(--cream);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .page-description {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        /* ── Process Strip ── */
+        .process-section {
+            padding: 2rem 0 5rem;
+        }
+
+        .process-strip-wrapper {
+            position: relative;
+            padding: 0 2.5rem;
+        }
+
+        .process-strip {
+            display: flex;
+            gap: 0;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 1.5rem 0 2rem;
+            -ms-overflow-style: none;
+        }
+
+        /* Styled scrollbar */
+        .process-strip::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .process-strip::-webkit-scrollbar-track {
+            background: var(--warm-brown);
+            border-radius: 3px;
+        }
+
+        .process-strip::-webkit-scrollbar-thumb {
+            background: var(--amber);
+            border-radius: 3px;
+        }
+
+        .process-strip::-webkit-scrollbar-thumb:hover {
+            background: var(--amber-light);
+        }
+
+        /* Firefox scrollbar */
+        .process-strip {
+            scrollbar-width: thin;
+            scrollbar-color: var(--amber) var(--warm-brown);
+        }
+
+        .process-step {
+            flex: 0 0 280px;
+            scroll-snap-align: start;
+            position: relative;
+        }
+
+        .process-step-card {
+            background: var(--dark);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .process-step-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(200, 135, 58, 0.4);
+        }
+
+        .process-img-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+        }
+
+        .process-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .process-step-card:hover .process-img-wrap img {
+            transform: scale(1.04);
+        }
+
+        .step-label {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--cream);
+            background: rgba(14, 12, 10, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(200, 135, 58, 0.15);
+            z-index: 2;
+        }
+
+        .step-label.finished {
+            background: rgba(200, 135, 58, 0.25);
+            border-color: rgba(200, 135, 58, 0.4);
+            color: var(--amber-light);
+        }
+
+        .process-caption {
+            padding: 1rem 1.15rem 1.15rem;
+        }
+
+        .process-caption p {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ── Process Arrows ── */
+        .process-arrow {
+            flex: 0 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-self: center;
+            padding-bottom: 3rem;
+        }
+
+        .process-arrow svg {
+            width: 22px;
+            height: 22px;
+            color: var(--amber);
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .process-arrow:hover svg {
+            opacity: 1;
+        }
+
+        /* ── Studio Section ── */
+        .studio-section {
+            padding: 4rem 2.5rem 6rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .studio-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .studio-header .section-label {
+            margin-bottom: 1rem;
+        }
+
+        .studio-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            color: var(--cream);
+            margin-bottom: 1.25rem;
+        }
+
+        .studio-text {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .studio-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--amber);
+            margin: 2.5rem auto 0;
+            opacity: 0.4;
+        }
+
+        .studio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .studio-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: var(--dark);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .studio-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(200, 135, 58, 0.35);
+        }
+
+        .studio-card img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .studio-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .studio-card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 1.25rem 1rem;
+            background: linear-gradient(to top, rgba(14, 12, 10, 0.85) 0%, transparent 100%);
+        }
+
+        .studio-card-overlay span {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+        }
+
+        /* ── Footer ── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin-bottom: 2rem;
+            list-style: none;
+        }
+
+        .footer-nav a {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: var(--amber-light);
+        }
+
+        .footer-divider {
+            width: 40px;
+            height: 1px;
+            background: var(--border);
+            margin: 0 auto 1.5rem;
+        }
+
+        .footer-copy {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            opacity: 0.6;
+            letter-spacing: 0.04em;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .page-header {
+                padding: 8rem 1.5rem 3rem;
+            }
+
+            .page-description {
+                font-size: 1rem;
+            }
+
+            .process-strip-wrapper {
+                padding: 0 1.5rem;
+            }
+
+            .process-step {
+                flex: 0 0 260px;
+            }
+
+            .studio-section {
+                padding: 3rem 1.5rem 5rem;
+            }
+
+            .studio-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .studio-card img {
+                aspect-ratio: 16 / 10;
+            }
+
+            footer {
+                padding: 2.5rem 1.5rem 1.5rem;
+            }
+
+            .footer-nav {
+                gap: 1rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header {
+                padding: 7rem 1.25rem 2.5rem;
+            }
+
+            .process-strip-wrapper {
+                padding: 0 1rem;
+            }
+
+            .process-step {
+                flex: 0 0 240px;
+            }
+
+            .process-arrow {
+                flex: 0 0 30px;
+            }
+
+            .studio-section {
+                padding: 2.5rem 1.25rem 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── Navigation ── -->
+    <nav>
+        <a href="index.html" class="nav-logo">Scott<span>'</span>s Art</a>
+        <ul class="nav-links">
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="live.html">Watch Live</a></li>
+            <li><a href="about.html">About Scott</a></li>
+            <li><a href="digital.html">Digital Art</a></li>
+            <li><a href="index.html#commission">Commission</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- ── Mobile Menu ── -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="gallery.html" onclick="toggleMenu()">Gallery</a>
+        <a href="live.html" onclick="toggleMenu()">Watch Live</a>
+        <a href="about.html" onclick="toggleMenu()">About Scott</a>
+        <a href="digital.html" onclick="toggleMenu()">Digital Art</a>
+        <a href="index.html#commission" onclick="toggleMenu()">Commission</a>
+    </div>
+
+    <!-- ── Page Header ── -->
+    <header class="page-header">
+        <span class="section-label">Behind the Canvas</span>
+        <h1 class="page-title">The Process</h1>
+        <p class="page-description">
+            Every painting begins on a black canvas with a simple pencil outline. Over days and weeks, vivid color emerges from the darkness &mdash; layer by careful layer.
+        </p>
+    </header>
+
+    <!-- ── Process Strip ── -->
+    <section class="process-section">
+        <div class="process-strip-wrapper">
+            <div class="process-strip">
+
+                <!-- Step 1 -->
+                <div class="process-step">
+                    <div class="process-step-card">
+                        <div class="process-img-wrap">
+                            <span class="step-label">Step 1</span>
+                            <img src="images/process/01-tulip-sketch.jpeg" alt="Initial pencil sketch of a tulip on black canvas" loading="lazy">
+                        </div>
+                        <div class="process-caption">
+                            <p>Initial sketch on black canvas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arrow -->
+                <div class="process-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-step">
+                    <div class="process-step-card">
+                        <div class="process-img-wrap">
+                            <span class="step-label">Step 2</span>
+                            <img src="images/process/02-tulip-early.jpeg" alt="First layers of color emerging on the tulip painting" loading="lazy">
+                        </div>
+                        <div class="process-caption">
+                            <p>First layers of color emerge</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arrow -->
+                <div class="process-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-step">
+                    <div class="process-step-card">
+                        <div class="process-img-wrap">
+                            <span class="step-label">Step 3</span>
+                            <img src="images/process/03-tulip-mid.jpeg" alt="Building depth and dimension in the tulip painting" loading="lazy">
+                        </div>
+                        <div class="process-caption">
+                            <p>Building depth and dimension</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arrow -->
+                <div class="process-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="process-step">
+                    <div class="process-step-card">
+                        <div class="process-img-wrap">
+                            <span class="step-label">Step 4</span>
+                            <img src="images/process/04-tulip-detail.jpeg" alt="Fine detail and texture work on the tulip" loading="lazy">
+                        </div>
+                        <div class="process-caption">
+                            <p>Fine detail and texture work</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arrow -->
+                <div class="process-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </div>
+
+                <!-- Step 5 (Finished) -->
+                <div class="process-step">
+                    <div class="process-step-card">
+                        <div class="process-img-wrap">
+                            <span class="step-label finished">Finished</span>
+                            <img src="images/process/05-tulip-finished.jpeg" alt="The completed Red and White Tulip painting" loading="lazy">
+                        </div>
+                        <div class="process-caption">
+                            <p>The completed Red &amp; White Tulip</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Studio Section ── -->
+    <section class="studio-section">
+        <div class="studio-header">
+            <span class="section-label">Where It Happens</span>
+            <h2 class="studio-title">In the Studio</h2>
+            <p class="studio-text">
+                Scott works from a quiet home studio, painting under carefully balanced lighting that brings each petal and leaf to life. The easel, the brushes, the slow rhythm of layered acrylic on black &mdash; this is where patience becomes art.
+            </p>
+            <div class="studio-divider"></div>
+        </div>
+
+        <div class="studio-grid">
+            <div class="studio-card">
+                <img src="images/studio/anemone-on-easel.jpeg" alt="Anemone painting displayed on the studio easel" loading="lazy">
+                <div class="studio-card-overlay">
+                    <span>Anemone on the easel</span>
+                </div>
+            </div>
+            <div class="studio-card">
+                <img src="images/studio/poppy-on-easel.jpeg" alt="Poppy painting displayed on the studio easel" loading="lazy">
+                <div class="studio-card-overlay">
+                    <span>Poppy on the easel</span>
+                </div>
+            </div>
+            <div class="studio-card">
+                <img src="images/studio/rose-in-progress.jpeg" alt="Rose painting in progress in the studio" loading="lazy">
+                <div class="studio-card-overlay">
+                    <span>Rose in progress</span>
+                </div>
+            </div>
+            <div class="studio-card">
+                <img src="images/studio/tulip-in-studio.jpeg" alt="Tulip painting in the studio environment" loading="lazy">
+                <div class="studio-card-overlay">
+                    <span>Tulip in the studio</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer>
+        <div class="footer-inner">
+            <ul class="footer-nav">
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="live.html">Watch Live</a></li>
+                <li><a href="about.html">About Scott</a></li>
+                <li><a href="digital.html">Digital Art</a></li>
+                <li><a href="process.html">The Process</a></li>
+                <li><a href="index.html#commission">Commission</a></li>
+            </ul>
+            <div class="footer-divider"></div>
+            <p class="footer-copy">&copy; 2026 Scott's Botanical Art. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ── Scripts ── -->
+    <script>
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.getElementById('mobileMenu');
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const mobileMenu = document.getElementById('mobileMenu');
+                if (mobileMenu.classList.contains('active')) {
+                    toggleMenu();
+                }
+            }
+        });
+
+        // Subtle fade-in on scroll for studio cards
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.studio-card').forEach(function(card) {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>

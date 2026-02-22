@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watch Scott Paint Live — Scott's Art</title>
+<meta name="description" content="Watch Scott Carle paint live via studio webcam. Catch botanical oil paintings in progress on weekend mornings and spontaneous evening sessions.">
+<meta property="og:title" content="Watch Scott Paint Live — Scott's Art">
+<meta property="og:description" content="Scott opens his studio to the world through a live webcam. Watch botanical oil paintings come to life.">
+<meta property="og:image" content="images/studio/poppy-on-easel.jpeg">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0e0c0a;
+    --dark: #1a1612;
+    --warm-brown: #2e2119;
+    --amber: #c8873a;
+    --amber-light: #e8a85a;
+    --cream: #f5efe6;
+    --cream-dark: #e8ddd0;
+    --sage: #7a8c6e;
+    --rust: #a04a2a;
+    --text: #f0e8dc;
+    --text-muted: #a09080;
+    --border: rgba(200,135,58,0.2);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(14,12,10,0.95), transparent);
+    backdrop-filter: blur(4px);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-logo span {
+    color: var(--amber);
+    font-style: italic;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--amber); }
+  .nav-links a.active { color: var(--amber); }
+
+  .nav-cta {
+    background: var(--amber);
+    color: var(--black) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 2px;
+    font-weight: 500 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    transition: background 0.3s !important;
+  }
+
+  .nav-cta:hover { background: var(--amber-light) !important; color: var(--black) !important; }
+
+  /* ─── SECTION COMMON ─── */
+  section { padding: 5rem 5rem; }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--amber);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .section-body {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    max-width: 50ch;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ─── BUTTONS ─── */
+  .btn-primary {
+    background: var(--amber);
+    color: var(--black);
+    padding: 0.85rem 2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn-primary:hover {
+    background: var(--amber-light);
+    transform: translateY(-1px);
+  }
+
+  /* ─── LIVE PAGE ─── */
+  .live-hero {
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+  }
+
+  .live-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .live-text {
+    padding-top: 1rem;
+  }
+
+  .live-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* ─── WEBCAM FRAME ─── */
+  .webcam-frame {
+    position: relative;
+    aspect-ratio: 16/10;
+    background: var(--warm-brown);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .webcam-frame img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    filter: blur(2px);
+  }
+
+  .webcam-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 2;
+  }
+
+  .webcam-play {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(200,135,58,0.2);
+    border: 2px solid var(--amber);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+
+  .webcam-frame:hover .webcam-play {
+    background: rgba(200,135,58,0.4);
+    transform: scale(1.08);
+  }
+
+  .webcam-play svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--amber);
+    margin-left: 3px;
+  }
+
+  .webcam-cta-text {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream);
+    font-weight: 400;
+  }
+
+  .webcam-live-pill {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #c0392b;
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.7rem;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 3;
+  }
+
+  .webcam-live-dot {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .webcam-corner-label {
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: rgba(240,232,220,0.5);
+    z-index: 3;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* ─── SCHEDULE BOX ─── */
+  .schedule-box {
+    background: var(--warm-brown);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.8rem 2rem;
+  }
+
+  .schedule-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.2rem;
+  }
+
+  .schedule-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .schedule-items li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    font-size: 0.92rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .schedule-items li::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    min-width: 6px;
+    background: var(--amber);
+    border-radius: 50%;
+    margin-top: 0.5em;
+  }
+
+  .schedule-items .schedule-detail {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    font-family: 'Lora', serif;
+  }
+
+  /* ─── CTA AREA ─── */
+  .live-cta-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  .live-note {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── SCROLL ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── HAMBURGER ─── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--cream);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--black);
+    z-index: 99;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.3s;
+  }
+  .mobile-menu a:hover { color: var(--amber); }
+  .mobile-menu .mobile-cta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem !important;
+    background: var(--amber);
+    color: var(--black) !important;
+    padding: 0.85rem 2.5rem;
+    border-radius: 2px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 1rem;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--warm-brown);
+    border-top: 1px solid var(--border);
+    padding: 3rem 5rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-brand p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-top: 0.8rem;
+    max-width: 28ch;
+  }
+
+  .footer-col h4 {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-col a {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-col a:hover { color: var(--cream); }
+
+  .footer-bottom {
+    background: var(--black);
+    padding: 1.2rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+  }
+
+  /* ─── MOBILE BREAKPOINTS ─── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+
+    section { padding: 3rem 1.5rem; }
+
+    .live-hero { padding-top: 6rem; padding-bottom: 3rem; }
+
+    .live-layout {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .live-text { padding-top: 0; }
+
+    .schedule-box { padding: 1.5rem; }
+
+    footer {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      padding: 2.5rem 1.5rem;
+    }
+    .footer-brand { grid-column: 1 / -1; }
+    .footer-bottom {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+      padding: 1.2rem 1.5rem;
+      font-size: 0.72rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    footer { grid-template-columns: 1fr; }
+    .webcam-play { width: 52px; height: 52px; }
+    .webcam-play svg { width: 20px; height: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="gallery.html" onclick="closeMenu()">Gallery</a>
+  <a href="live.html" onclick="closeMenu()">Watch Live</a>
+  <a href="about.html" onclick="closeMenu()">About Scott</a>
+  <a href="digital.html" onclick="closeMenu()">Digital Art</a>
+  <a href="index.html#commission" class="mobile-cta" onclick="closeMenu()">Commission a Piece</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Scott's<span>Art</span></a>
+  <ul class="nav-links">
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="live.html" class="active">Watch Live</a></li>
+    <li><a href="about.html">About Scott</a></li>
+    <li><a href="digital.html">Digital Art</a></li>
+    <li><a href="index.html#commission" class="nav-cta">Commission a Piece</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- LIVE SECTION -->
+<section class="live-hero">
+  <div class="live-layout">
+
+    <!-- LEFT: TEXT -->
+    <div class="live-text reveal">
+      <div class="section-label">Studio</div>
+      <h1 class="section-title" style="font-size:clamp(2.4rem,4vw,3.5rem);">Watch Scott paint &mdash; live</h1>
+      <p class="section-body">
+        Scott opens his studio to the world through a live webcam. Catch him mid-brushstroke on weekend mornings or spontaneous evening sessions.
+      </p>
+
+      <div class="live-cta-area">
+        <a href="https://scottswebcam.com" target="_blank" class="btn-primary">Open live webcam &rarr;</a>
+        <span class="live-note">Webcam active during painting sessions &middot; No login required</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: WEBCAM + SCHEDULE -->
+    <div class="live-right reveal">
+
+      <!-- Webcam Frame -->
+      <a href="https://scottswebcam.com" target="_blank" class="webcam-frame" style="text-decoration:none;">
+        <img src="images/studio/poppy-on-easel.jpeg" alt="Scott's studio with painting on easel">
+
+        <!-- Live pill -->
+        <div class="webcam-live-pill">
+          <span class="webcam-live-dot"></span>
+          Live
+        </div>
+
+        <!-- Play overlay -->
+        <div class="webcam-overlay">
+          <div class="webcam-play">
+            <svg viewBox="0 0 24 24"><polygon points="8,5 20,12 8,19"></polygon></svg>
+          </div>
+          <span class="webcam-cta-text">Click to watch live</span>
+        </div>
+
+        <!-- Corner label -->
+        <span class="webcam-corner-label">ScottsWebcam.com</span>
+      </a>
+
+      <!-- Schedule Box -->
+      <div class="schedule-box">
+        <div class="schedule-title">Typical painting times</div>
+        <ul class="schedule-items">
+          <li>
+            <span>Weekend mornings<span class="schedule-detail">early sessions, most reliable</span></span>
+          </li>
+          <li>
+            <span>Random evenings throughout the week</span>
+          </li>
+          <li>
+            <span>Sometimes late night<span class="schedule-detail">when inspiration strikes</span></span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div class="nav-logo" style="font-size:1.3rem;">Scott's<span style="color:var(--amber);font-style:italic;">Art</span></div>
+    <p>Botanical paintings by Scott Carle, M.D. — Little Rock, Arkansas. Painting since 1998.</p>
+    <div style="margin-top:1.2rem;font-size:0.8rem;color:var(--text-muted);">501-960-4137 &middot; <a href="mailto:Scott@ScottsArt.com" style="color:var(--amber);text-decoration:none;">Scott@ScottsArt.com</a></div>
+  </div>
+
+  <div class="footer-col">
+    <h4>Explore</h4>
+    <ul>
+      <li><a href="gallery.html">Full gallery</a></li>
+      <li><a href="about.html">About Scott</a></li>
+      <li><a href="digital.html">Digital art</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col">
+    <h4>Connect</h4>
+    <ul>
+      <li><a href="live.html">Watch live (webcam)</a></li>
+      <li><a href="index.html#commission">Commission a painting</a></li>
+      <li><a href="https://instagram.com/scottsart" target="_blank">Instagram</a></li>
+      <li><a href="https://facebook.com/scottsart" target="_blank">Facebook</a></li>
+      <li><a href="https://x.com/ScottCarleArt" target="_blank">Twitter / X</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col">
+    <h4>Digital</h4>
+    <ul>
+      <li><a href="digital.html">Bitcoin Ordinals</a></li>
+      <li><a href="https://x.com/ScottCarleArt/status/1935693589075345630" target="_blank">SatoshiHouseArt auction</a></li>
+      <li><a href="https://museum.b.tc" target="_blank">Bitcoin Museum Nashville</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  <span>&copy; 2026 Scott Carle. All artwork is the exclusive property of Scott Carle. All rights reserved.</span>
+  <span>Little Rock, AR 72223</span>
+</div>
+
+<script>
+  // ─── MOBILE MENU ───
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('hamburger');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ─── SCROLL REVEAL ───
+  const revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    revealObserver.observe(el);
+  });
+</script>
+</body>
+</html>
