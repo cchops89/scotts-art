@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scott's Art — Botanical Paintings by Scott Carle</title>
+<title>ScottsArt — Botanical Paintings by Scott Carle</title>
 <meta name="description" content="Large-scale botanical oil paintings on black canvas by Scott Carle, M.D. — Little Rock, Arkansas. Commissions, gallery, and Bitcoin Ordinals.">
-<meta property="og:title" content="Scott's Art — Botanical Paintings by Scott Carle">
+<meta property="og:title" content="ScottsArt — Botanical Paintings by Scott Carle">
 <meta property="og:description" content="Vivid, dimensional flowers that emerge from darkness. 200+ original oil paintings by physician and artist Scott Carle.">
 <meta property="og:image" content="images/hero/purple-anemone.jpeg">
 <meta property="og:type" content="website">
@@ -693,7 +693,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-logo">Scott's<span>Art</span></a>
+  <a href="index.html" class="nav-logo">Scotts<span>Art</span></a>
   <ul class="nav-links">
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="live.html">Watch Live</a></li>
@@ -747,81 +747,30 @@
     </div>
   </div>
 
-  <div class="gallery-grid">
-
-    <a class="gallery-card" href="gallery.html">
-      <div class="gallery-card-img">
-        <img src="images/gallery/thumbs/purple-anemone.jpeg" alt="Purple Anemone" loading="lazy">
-        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
-      </div>
-      <div class="gallery-card-name">Purple Anemone</div>
-      <div class="gallery-card-meta">Oil on canvas · 48 x 48 in</div>
-    </a>
-
-    <a class="gallery-card" href="gallery.html">
-      <div class="gallery-card-img">
-        <img src="images/gallery/thumbs/red-poppy.jpeg" alt="Red Poppy" loading="lazy">
-        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
-      </div>
-      <div class="gallery-card-name">Red Poppy</div>
-      <div class="gallery-card-meta">Oil on canvas · 48 x 48 in</div>
-    </a>
-
-    <a class="gallery-card" href="gallery.html">
-      <div class="gallery-card-img">
-        <img src="images/gallery/thumbs/parrot-tulip.jpeg" alt="Parrot Tulip" loading="lazy">
-        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
-      </div>
-      <div class="gallery-card-name">Parrot Tulip</div>
-      <div class="gallery-card-meta">Oil on canvas · 60 x 36 in</div>
-    </a>
-
-    <a class="gallery-card" href="gallery.html">
-      <div class="gallery-card-img">
-        <img src="images/gallery/thumbs/blue-passionflower.jpeg" alt="Blue Passionflower" loading="lazy">
-        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
-      </div>
-      <div class="gallery-card-name">Blue Passionflower</div>
-      <div class="gallery-card-meta">Oil on canvas · 54 x 54 in</div>
-    </a>
-
-    <a class="gallery-card" href="gallery.html">
-      <div class="gallery-card-img">
-        <img src="images/gallery/thumbs/red-calla-lily.jpeg" alt="Red Calla Lily" loading="lazy">
-        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
-      </div>
-      <div class="gallery-card-name">Red Calla Lily</div>
-      <div class="gallery-card-meta">Oil on canvas · 72 x 24 in</div>
-    </a>
-
-    <a class="gallery-card" href="gallery.html">
-      <div class="gallery-card-img">
-        <img src="images/gallery/thumbs/crimson-dahlia-spiral.jpeg" alt="Crimson Dahlia" loading="lazy">
-        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
-      </div>
-      <div class="gallery-card-name">Crimson Dahlia</div>
-      <div class="gallery-card-meta">Oil on canvas · 36 x 60 in</div>
-    </a>
-
-    <a class="gallery-card" href="gallery.html">
-      <div class="gallery-card-img">
-        <img src="images/gallery/thumbs/white-orange-blossom.jpeg" alt="Orange Blossom" loading="lazy">
-        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
-      </div>
-      <div class="gallery-card-name">Orange Blossom</div>
-      <div class="gallery-card-meta">Oil on canvas · 48 x 48 in</div>
-    </a>
-
-    <a class="gallery-card" href="gallery.html">
-      <div class="gallery-card-img">
-        <img src="images/gallery/thumbs/sunflower-center.jpeg" alt="Sunflower" loading="lazy">
-        <div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>
-      </div>
-      <div class="gallery-card-name">Sunflower</div>
-      <div class="gallery-card-meta">Oil on canvas · 54 x 54 in</div>
-    </a>
-
+  <div class="gallery-grid" id="featuredGrid">
   </div>
+
+  <script>
+    fetch('data/paintings.json')
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        var grid = document.getElementById('featuredGrid');
+        var featured = data.featured;
+        featured.forEach(function(p) {
+          var card = document.createElement('a');
+          card.className = 'gallery-card';
+          card.href = 'gallery.html';
+          card.innerHTML =
+            '<div class="gallery-card-img">' +
+              '<img src="' + p.thumb + '" alt="' + p.name + '" loading="lazy">' +
+              '<div class="gallery-card-overlay"><span class="gallery-card-action">View painting &rarr;</span></div>' +
+            '</div>' +
+            '<div class="gallery-card-name">' + p.name + '</div>' +
+            '<div class="gallery-card-meta">' + p.medium + ' \u00b7 ' + p.dimensions + '</div>';
+          grid.appendChild(card);
+        });
+      });
+  </script>
 
   <div class="gallery-view-all">
     <a href="gallery.html" class="btn-primary">View all 200+ paintings &rarr;</a>
@@ -876,7 +825,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">
-    <div class="nav-logo" style="font-size:1.3rem;">Scott's<span style="color:var(--amber);font-style:italic;">Art</span></div>
+    <div class="nav-logo" style="font-size:1.3rem;">Scotts<span style="color:var(--amber);font-style:italic;">Art</span></div>
     <p>Botanical paintings by Scott Carle, M.D. — Little Rock, Arkansas. Painting since 1998.</p>
     <div style="margin-top:1.2rem;font-size:0.8rem;color:var(--text-muted);">501-960-4137 · <a href="mailto:Scott@ScottsArt.com" style="color:var(--amber);text-decoration:none;">Scott@ScottsArt.com</a></div>
   </div>

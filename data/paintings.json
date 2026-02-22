@@ -1,0 +1,1035 @@
+{
+  "paintings": [
+    {
+      "name": "Red Rose '25",
+      "year": 25,
+      "tags": "rose",
+      "medium": "Oil on canvas",
+      "dimensions": "36 x 36 in",
+      "image": "images/gallery/C25-004 36 x 36 Red Rose.jpg",
+      "featured": false
+    },
+    {
+      "name": "Yellow Rose '25",
+      "year": 25,
+      "tags": "rose",
+      "medium": "Acrylic on canvas",
+      "dimensions": "36 x 36 in",
+      "image": "images/gallery/C25-15 36 x 36 Yellow Rose Acrylic Canvas.jpg",
+      "featured": false
+    },
+    {
+      "name": "Red Rose '15",
+      "year": 15,
+      "tags": "rose",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 48 in",
+      "image": "images/gallery/C15-005 48x48 Red Rose.JPG",
+      "featured": false
+    },
+    {
+      "name": "Red Rose (Tall) '15",
+      "year": 15,
+      "tags": "rose",
+      "medium": "Oil on canvas",
+      "dimensions": "36 x 72 in",
+      "image": "images/gallery/C15-006 36X72 Red Rose.JPG",
+      "featured": false
+    },
+    {
+      "name": "Red Rose on Light Background '14",
+      "year": 14,
+      "tags": "rose",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 48 in",
+      "image": "images/gallery/C14-003 48 x 48 Red Rose on light background.jpg",
+      "featured": false
+    },
+    {
+      "name": "Red Rose '12",
+      "year": 12,
+      "tags": "rose",
+      "medium": "Oil on canvas",
+      "dimensions": "30 x 30 in",
+      "image": "images/gallery/C12-013 30X30 Red Rose.JPG",
+      "featured": false
+    },
+    {
+      "name": "Rose and Water '11",
+      "year": 11,
+      "tags": "rose",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 72 in",
+      "image": "images/gallery/C11-003 Rose and Water 48 X 72.jpg",
+      "featured": false
+    },
+    {
+      "name": "Red Rose (Tabriz) '11",
+      "year": 11,
+      "tags": "rose",
+      "medium": "Oil on canvas",
+      "dimensions": "30 x 30 in",
+      "image": "images/gallery/C11-004 Tabriz 2011 Red Rose 30 X 30.jpg",
+      "featured": false
+    },
+    {
+      "name": "Red Rose '11",
+      "year": 11,
+      "tags": "rose",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 60 in",
+      "image": "images/gallery/C11-006 48X60 Red Rose.jpg",
+      "featured": false
+    },
+    {
+      "name": "Hope Ball Red Rose '11",
+      "year": 11,
+      "tags": "rose",
+      "medium": "Oil on canvas",
+      "dimensions": "60 x 48 in",
+      "image": "images/gallery/C11-007 Hope Ball Red Rose 60X48.jpg",
+      "featured": false
+    },
+    {
+      "name": "Roses Together '11",
+      "year": 11,
+      "tags": "rose",
+      "medium": "Oil on canvas",
+      "dimensions": "30 x 24 in",
+      "image": "images/gallery/C11-019 30 X 24 Roses Together.JPG",
+      "featured": false
+    },
+    {
+      "name": "Red Rose Single '11",
+      "year": 11,
+      "tags": "rose",
+      "medium": "Oil on canvas",
+      "dimensions": "36 x 36 in",
+      "image": "images/gallery/C11-021 36X36 Red Rose Single.JPG",
+      "featured": false
+    },
+    {
+      "name": "Single Red Rose '08",
+      "year": 8,
+      "tags": "rose",
+      "medium": "Oil on canvas",
+      "dimensions": "Oil on canvas",
+      "image": "images/gallery/C08-015 Single Red Rose.jpg",
+      "featured": false
+    },
+    {
+      "name": "Large Single Red Rose '08",
+      "year": 8,
+      "tags": "rose",
+      "medium": "Oil on canvas",
+      "dimensions": "5 x 4 ft",
+      "image": "images/gallery/C08-020  5 ft tall and 4 ft wide single red rose.jpg",
+      "featured": false
+    },
+    {
+      "name": "Single Red Rose '05",
+      "year": 5,
+      "tags": "rose",
+      "medium": "Oil on canvas",
+      "dimensions": "C05",
+      "image": "images/gallery/C05-008 Single Red Rose.jpg",
+      "featured": false
+    },
+    {
+      "name": "Gloriosa Lily '25",
+      "year": 25,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "36 x 60 in",
+      "image": "images/gallery/C25-005 36 x 60 Gloriosa Lily.jpg",
+      "featured": false
+    },
+    {
+      "name": "White Lily '25",
+      "year": 25,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 60 in",
+      "image": "images/gallery/C25-14 48x60 White Lily.jpg",
+      "featured": false
+    },
+    {
+      "name": "Yellow Calla Lily '23",
+      "year": 23,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "Oil on canvas",
+      "image": "images/gallery/C23-012 Yellow Calla Lily.jpg",
+      "featured": false
+    },
+    {
+      "name": "White Lily Side View '20",
+      "year": 20,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "36 x 48 in",
+      "image": "images/gallery/C20-001 36 by 48 inch Whitel Lily Side View.jpg",
+      "featured": false
+    },
+    {
+      "name": "White Lily Front Close '20",
+      "year": 20,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "36 x 36 in",
+      "image": "images/gallery/C20-002 36 by 36 inche White Lily Front Close.jpg",
+      "featured": false
+    },
+    {
+      "name": "White Lily '20",
+      "year": 20,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 60 in",
+      "image": "images/gallery/C20-003 48 by 60 inch White Lily.jpg",
+      "featured": false
+    },
+    {
+      "name": "Casablanca Lily '20",
+      "year": 20,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "69 x 45 in",
+      "image": "images/gallery/C20-004 69 x 45 Casablanca Lily.jpg",
+      "featured": false
+    },
+    {
+      "name": "Tiger Lily '20",
+      "year": 20,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "Oil on canvas",
+      "image": "images/gallery/C20-005 Tiger Lily.jpg",
+      "featured": false
+    },
+    {
+      "name": "Gloriosa Lily '20",
+      "year": 20,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "72 x 60 in",
+      "image": "images/gallery/C20-006 72 x 60 Gloriosa Lily.jpg",
+      "featured": false
+    },
+    {
+      "name": "White Lily '18",
+      "year": 18,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 72 in",
+      "image": "images/gallery/C18-003 48 by 72 White Lily.jpg",
+      "featured": false
+    },
+    {
+      "name": "White Lily '15",
+      "year": 15,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "72 x 48 in",
+      "image": "images/gallery/C15-009 72 inch by 48 inch white Lily.jpg",
+      "featured": false
+    },
+    {
+      "name": "Red Lily '15",
+      "year": 15,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "56 x 41 in",
+      "image": "images/gallery/C15-016 56 inches by 41 inches Red Lily.jpg",
+      "featured": false
+    },
+    {
+      "name": "Red Lily '12",
+      "year": 12,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 48 in",
+      "image": "images/gallery/C12-001  Red Lily SJH 48X48.jpg",
+      "featured": false
+    },
+    {
+      "name": "Red Calla Lily '11",
+      "year": 11,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "72 x 24 in",
+      "image": "images/gallery/C11-002 72X24 Red Cala Lily.JPG",
+      "featured": false
+    },
+    {
+      "name": "Red Calla Lily '11",
+      "year": 11,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 12 in",
+      "image": "images/gallery/C11-008 48X12 Cala Lily Red.JPG",
+      "featured": false
+    },
+    {
+      "name": "Wheat Calla Lily '11",
+      "year": 11,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 12 in",
+      "image": "images/gallery/C11-009 48X12 Wheat Cala Lily.JPG",
+      "featured": false
+    },
+    {
+      "name": "Twin Calla Lilies '11",
+      "year": 11,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "Oil on canvas",
+      "image": "images/gallery/C11-Twin Cala Lilys.jpg",
+      "featured": false
+    },
+    {
+      "name": "White Lily '10",
+      "year": 10,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "72 x 48 in",
+      "image": "images/gallery/C10-003 72X48 White Lily.JPG",
+      "featured": false
+    },
+    {
+      "name": "Library Lily (Left) '10",
+      "year": 10,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "30 x 60 in",
+      "image": "images/gallery/C10-012 30X60 Library Lily Left.jpg",
+      "featured": false
+    },
+    {
+      "name": "Library Lily (Right) '10",
+      "year": 10,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "30 x 60 in",
+      "image": "images/gallery/C10-013 30X60 Library Lily Right.jpg",
+      "featured": false
+    },
+    {
+      "name": "Lily '10",
+      "year": 10,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "24 x 72 in",
+      "image": "images/gallery/C10-016 24X72 Lily.jpg",
+      "featured": false
+    },
+    {
+      "name": "Twin Lilies '10",
+      "year": 10,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "36 x 60 in",
+      "image": "images/gallery/C10-016 36X60 Twin Lilys.jpg",
+      "featured": false
+    },
+    {
+      "name": "Red Calla Lily '10",
+      "year": 10,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "72 x 24 in",
+      "image": "images/gallery/C10-024 Red Calla Lily 72 in X 24 in.JPG",
+      "featured": false
+    },
+    {
+      "name": "Twin Lily '08",
+      "year": 8,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "58 x 70 in framed",
+      "image": "images/gallery/C08-002 Twin Lily  Framed will be 58 inches by 70 inches.jpg",
+      "featured": false
+    },
+    {
+      "name": "Tall Single Lily '08",
+      "year": 8,
+      "tags": "lily",
+      "medium": "Oil on canvas",
+      "dimensions": "82 x 58 in",
+      "image": "images/gallery/C08-003 Tall single lily Framed 82 inches tall and 58 inches.jpg",
+      "featured": false
+    },
+    {
+      "name": "Tulip '23",
+      "year": 23,
+      "tags": "tulip",
+      "medium": "Oil on canvas",
+      "dimensions": "60 x 72 in",
+      "image": "images/gallery/C23-007 60 x 72 Tulip.jpg",
+      "featured": false
+    },
+    {
+      "name": "Double White Tulip '23",
+      "year": 23,
+      "tags": "tulip",
+      "medium": "Oil on canvas",
+      "dimensions": "72 x 36 in",
+      "image": "images/gallery/C23-013 Double White Tulip 72 by 36.jpg",
+      "featured": false
+    },
+    {
+      "name": "Single White Tulip '23",
+      "year": 23,
+      "tags": "tulip",
+      "medium": "Oil on canvas",
+      "dimensions": "72 x 36 in",
+      "image": "images/gallery/C23-014 Single White Tulip 72 by 36.jpg",
+      "featured": false
+    },
+    {
+      "name": "Red Tulip '21",
+      "year": 21,
+      "tags": "tulip",
+      "medium": "Oil on canvas",
+      "dimensions": "60 x 60 in",
+      "image": "images/gallery/C21-001 Red Tulip 60 x 60.JPG",
+      "featured": false
+    },
+    {
+      "name": "Tulip Michelle '14",
+      "year": 14,
+      "tags": "tulip",
+      "medium": "Oil on canvas",
+      "dimensions": "54 x 54 in",
+      "image": "images/gallery/C14-005 54X54 Tulip Michelle.JPG",
+      "featured": false
+    },
+    {
+      "name": "Red and White Tulip '13",
+      "year": 13,
+      "tags": "tulip",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 48 in",
+      "image": "images/gallery/C13-002 48 X 48 Tulip Red and White.jpg",
+      "featured": false
+    },
+    {
+      "name": "Red Tulip '12",
+      "year": 12,
+      "tags": "tulip",
+      "medium": "Oil on canvas",
+      "dimensions": "36 x 36 in",
+      "image": "images/gallery/C12-002 36X36 Red Tulip.jpg",
+      "featured": false
+    },
+    {
+      "name": "Tulip '10",
+      "year": 10,
+      "tags": "tulip",
+      "medium": "Oil on canvas",
+      "dimensions": "5 x 3 ft",
+      "image": "images/gallery/C10-001 Tulip 5 X 3 feet.jpg",
+      "featured": false
+    },
+    {
+      "name": "White Tulip '10",
+      "year": 10,
+      "tags": "tulip",
+      "medium": "Oil on canvas",
+      "dimensions": "5 x 4 ft",
+      "image": "images/gallery/C10-002 white tulip 5 X 4 feet.jpg",
+      "featured": false
+    },
+    {
+      "name": "White Peony '25",
+      "year": 25,
+      "tags": "peony",
+      "medium": "Oil on canvas",
+      "dimensions": "60 x 60 in",
+      "image": "images/gallery/C25-002 60 X 60 White Peony.jpg",
+      "featured": false
+    },
+    {
+      "name": "Red Peony '25",
+      "year": 25,
+      "tags": "peony",
+      "medium": "Oil on canvas",
+      "dimensions": "60 x 60 in",
+      "image": "images/gallery/C25-10 60 x 60 Red Peony.jpg",
+      "featured": false
+    },
+    {
+      "name": "Pink Peony '23",
+      "year": 23,
+      "tags": "peony",
+      "medium": "Oil on canvas",
+      "dimensions": "50 x 50 in",
+      "image": "images/gallery/C23-005 Pink Peony 50 inch by 50 inch.jpg",
+      "featured": false
+    },
+    {
+      "name": "White Peony '21",
+      "year": 21,
+      "tags": "peony",
+      "medium": "Oil on canvas",
+      "dimensions": "60 x 60 in",
+      "image": "images/gallery/C21-002 White Peony 60 x 60.jpeg",
+      "featured": false
+    },
+    {
+      "name": "Peony '18",
+      "year": 18,
+      "tags": "peony",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 60 in",
+      "image": "images/gallery/C18-006 48 x 60 Peony.jpg",
+      "featured": false
+    },
+    {
+      "name": "Peony '15",
+      "year": 15,
+      "tags": "peony",
+      "medium": "Oil on canvas",
+      "dimensions": "60 x 40 in",
+      "image": "images/gallery/C15-003 60X40 Peony.jpg",
+      "featured": false
+    },
+    {
+      "name": "Sunflower '18",
+      "year": 18,
+      "tags": "sunflower",
+      "medium": "Oil on canvas",
+      "dimensions": "30 x 30 in",
+      "image": "images/gallery/C18-009 30 by 30 Sunflower.jpg",
+      "featured": false
+    },
+    {
+      "name": "Sunflower '15",
+      "year": 15,
+      "tags": "sunflower",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 48 in",
+      "image": "images/gallery/C15-007 48 x 48 Sunflower.jpg",
+      "featured": false
+    },
+    {
+      "name": "Sunflower '12",
+      "year": 12,
+      "tags": "sunflower",
+      "medium": "Oil on canvas",
+      "dimensions": "54 x 54 in",
+      "image": "images/gallery/C12-005 Sunflower 54X54.jpg",
+      "featured": false
+    },
+    {
+      "name": "Sunflower '10",
+      "year": 10,
+      "tags": "sunflower",
+      "medium": "Oil on canvas",
+      "dimensions": "54 x 54 in",
+      "image": "images/gallery/C10-008 Sunflower 54 X 54.jpg",
+      "featured": false
+    },
+    {
+      "name": "Sunflower '08",
+      "year": 8,
+      "tags": "sunflower",
+      "medium": "Oil on canvas",
+      "dimensions": "30 x 30 in",
+      "image": "images/gallery/C08-006 Sunflower 30 in by 30 in frameless.jpg",
+      "featured": false
+    },
+    {
+      "name": "Dahlia '23",
+      "year": 23,
+      "tags": "dahlia",
+      "medium": "Oil on canvas",
+      "dimensions": "Oil on canvas",
+      "image": "images/gallery/C23-004 Dahlia.jpg",
+      "featured": false
+    },
+    {
+      "name": "Red Dahlia '11",
+      "year": 11,
+      "tags": "dahlia",
+      "medium": "Oil on canvas",
+      "dimensions": "36 x 60 in",
+      "image": "images/gallery/C11-013 36 X 60 Dalia Red.JPG",
+      "featured": false
+    },
+    {
+      "name": "Dahlia Montague '07",
+      "year": 7,
+      "tags": "dahlia",
+      "medium": "Oil on canvas",
+      "dimensions": "Oil on canvas",
+      "image": "images/gallery/C07-005 Dahlia Montegue.jpg",
+      "featured": false
+    },
+    {
+      "name": "White Orchids '25",
+      "year": 25,
+      "tags": "orchid",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 72 in",
+      "image": "images/gallery/C25-07 48 x 72 White Orchids.jpg",
+      "featured": false
+    },
+    {
+      "name": "Orange Orchid '20",
+      "year": 20,
+      "tags": "orchid",
+      "medium": "Oil on canvas",
+      "dimensions": "3 x 5 in",
+      "image": "images/gallery/C20-009 3 by 5 Mud Orange Orchid.jpg",
+      "featured": false
+    },
+    {
+      "name": "Orchid '06",
+      "year": 6,
+      "tags": "orchid",
+      "medium": "Oil on canvas",
+      "dimensions": "65 x 56 in framed",
+      "image": "images/gallery/C06-015  Orchid  65 inches tall by 56 inches wide framed.jpg",
+      "featured": false
+    },
+    {
+      "name": "Purple Iris '21",
+      "year": 21,
+      "tags": "iris",
+      "medium": "Oil on canvas",
+      "dimensions": "60 x 60 in",
+      "image": "images/gallery/C21-003 Purple Iris 60 x 60.jpeg",
+      "featured": false
+    },
+    {
+      "name": "Iris '15",
+      "year": 15,
+      "tags": "iris",
+      "medium": "Oil on canvas",
+      "dimensions": "54 x 54 in",
+      "image": "images/gallery/C15-002 54 x 54 Iris.JPG",
+      "featured": false
+    },
+    {
+      "name": "Iris '15",
+      "year": 15,
+      "tags": "iris",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 48 in",
+      "image": "images/gallery/C15-004 48x48 Iris.JPG",
+      "featured": false
+    },
+    {
+      "name": "Red Poppy '18",
+      "year": 18,
+      "tags": "poppy",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 48 in",
+      "image": "images/gallery/C18-005 Red Poppy 48 X 48 inches.jpg",
+      "featured": false
+    },
+    {
+      "name": "Red Poppy '18",
+      "year": 18,
+      "tags": "poppy",
+      "medium": "Oil on canvas",
+      "dimensions": "30 x 30 in",
+      "image": "images/gallery/C18-007 30 by 30 Red Poppy.jpg",
+      "featured": false
+    },
+    {
+      "name": "Red Poppy '08",
+      "year": 8,
+      "tags": "poppy",
+      "medium": "Oil on canvas",
+      "dimensions": "30 x 30 in",
+      "image": "images/gallery/C08-005 Red Poppy 30 inches by 30 inches frameless.jpg",
+      "featured": false
+    },
+    {
+      "name": "Passion Flower '19",
+      "year": 19,
+      "tags": "passionflower",
+      "medium": "Oil on canvas",
+      "dimensions": "60 x 72 in",
+      "image": "images/gallery/C19-002 60 by 72 inch Passion Flower.jpg",
+      "featured": false
+    },
+    {
+      "name": "Green White Passion Flower '14",
+      "year": 14,
+      "tags": "passionflower",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 48 in",
+      "image": "images/gallery/C14-001 48X48 Green White Passion Flower.JPG",
+      "featured": false
+    },
+    {
+      "name": "Passion Flower '13",
+      "year": 13,
+      "tags": "passionflower",
+      "medium": "Oil on canvas",
+      "dimensions": "54 x 54 in",
+      "image": "images/gallery/C13-001 54X54 Passion Flower.jpg",
+      "featured": false
+    },
+    {
+      "name": "Passion Flower '10",
+      "year": 10,
+      "tags": "passionflower",
+      "medium": "Oil on canvas",
+      "dimensions": "72 x 60 in",
+      "image": "images/gallery/C10-018 72 X 60 Passion Flower.JPG",
+      "featured": false
+    },
+    {
+      "name": "Blue Hibiscus '25",
+      "year": 25,
+      "tags": "hibiscus",
+      "medium": "Oil on canvas",
+      "dimensions": "60 x 60 in",
+      "image": "images/gallery/C25-11 60 by 60 Blue HIbiscus.jpg",
+      "featured": false
+    },
+    {
+      "name": "Red Hibiscus '14",
+      "year": 14,
+      "tags": "hibiscus",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 48 in",
+      "image": "images/gallery/C14-004 48 x 48 Red Hibiscus on light background.jpg",
+      "featured": false
+    },
+    {
+      "name": "Hibiscus '07",
+      "year": 7,
+      "tags": "hibiscus",
+      "medium": "Oil on canvas",
+      "dimensions": "46 x 58 in framed",
+      "image": "images/gallery/C07-010  Hibiscus  46 by 58 inches framed.jpg",
+      "featured": false
+    },
+    {
+      "name": "Hibiscus '07",
+      "year": 7,
+      "tags": "hibiscus",
+      "medium": "Oil on canvas",
+      "dimensions": "46 x 34 in",
+      "image": "images/gallery/C07-014  46 inches tall by 34 iches wide hibiscus.jpg",
+      "featured": false
+    },
+    {
+      "name": "Night Blooming Cereus '25",
+      "year": 25,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 60 in",
+      "image": "images/gallery/C25-001 48 x 60 NIght Blooming Cereus.jpg",
+      "featured": false
+    },
+    {
+      "name": "Honeysuckle '25",
+      "year": 25,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "18 x 36 in",
+      "image": "images/gallery/C25-003 18 x 36 Honey Suckle.jpg",
+      "featured": false
+    },
+    {
+      "name": "Butterfly Hydrangeas '25",
+      "year": 25,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "36 x 60 in",
+      "image": "images/gallery/C25-006 Butterfly Hydrangeas 36 x 60.jpg",
+      "featured": false
+    },
+    {
+      "name": "White Chrysanthemum '25",
+      "year": 25,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "60 x 60 in",
+      "image": "images/gallery/C25-09 White Chrysathemum 60 x 60.jpg",
+      "featured": false
+    },
+    {
+      "name": "African Daisy '23",
+      "year": 23,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "Oil on canvas",
+      "image": "images/gallery/C23-009 African Daisy.jpg",
+      "featured": false
+    },
+    {
+      "name": "Red White Chrysanthemum '23",
+      "year": 23,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "Oil on canvas",
+      "image": "images/gallery/C23-010 Red White Chrysanthemum.jpg",
+      "featured": false
+    },
+    {
+      "name": "White Gladiolus '23",
+      "year": 23,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "60 x 36 in",
+      "image": "images/gallery/C23-015 White Gladiolus 60 by 36.jpg",
+      "featured": false
+    },
+    {
+      "name": "Tiger Lily '22",
+      "year": 22,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "Oil on canvas",
+      "image": "images/gallery/C22-004 Tiger Lily.jpg",
+      "featured": false
+    },
+    {
+      "name": "Magnolia '19",
+      "year": 19,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 60 in",
+      "image": "images/gallery/C19-001 Magnolia 48 by 60.jpg",
+      "featured": false
+    },
+    {
+      "name": "Daffodil Yellow '19",
+      "year": 19,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "Oil on canvas",
+      "image": "images/gallery/C19-003 Daffodil Yellow.jpg",
+      "featured": false
+    },
+    {
+      "name": "Anemone '18",
+      "year": 18,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 48 in",
+      "image": "images/gallery/C18-001 48 by 48 Anemone.JPG",
+      "featured": false
+    },
+    {
+      "name": "Red Ranunculus '18",
+      "year": 18,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 48 in",
+      "image": "images/gallery/C18-002 48 by 48 Ranaculus Red.JPG",
+      "featured": false
+    },
+    {
+      "name": "Red Zinnia '18",
+      "year": 18,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 48 in",
+      "image": "images/gallery/C18-004 48 by 48 inch Red Zinnia.jpg",
+      "featured": false
+    },
+    {
+      "name": "Blue Zinnia '18",
+      "year": 18,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "30 x 30 in",
+      "image": "images/gallery/C18-008 Blue Zinnia 30 by 30.jpg",
+      "featured": false
+    },
+    {
+      "name": "Orange Blossom '18",
+      "year": 18,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 48 in",
+      "image": "images/gallery/C18-010 48 by 48 Orange Blossom.jpg",
+      "featured": false
+    },
+    {
+      "name": "Cancun Zinnia '18",
+      "year": 18,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "36 x 60 in",
+      "image": "images/gallery/C18-011 Cancun Zinnia 36 by 60 inches.jpg",
+      "featured": false
+    },
+    {
+      "name": "Chrysanthemum '18",
+      "year": 18,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "36 x 36 in",
+      "image": "images/gallery/C18-013 36 by 36 inches Chrysanthemum.jpg",
+      "featured": false
+    },
+    {
+      "name": "Snowball Sunrise '14",
+      "year": 14,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "60 x 48 in",
+      "image": "images/gallery/C14-006 60 by 48 Snowball Sunrise.JPG",
+      "featured": false
+    },
+    {
+      "name": "Borg with Moth '13",
+      "year": 13,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "72 x 60 in",
+      "image": "images/gallery/C13-003 72X60 Borg with Moth.jpg",
+      "featured": false
+    },
+    {
+      "name": "Dogwood '12",
+      "year": 12,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "60 x 72 in",
+      "image": "images/gallery/C12-006 60X72 Dogwood.jpg",
+      "featured": false
+    },
+    {
+      "name": "Zinnia '11",
+      "year": 11,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "30 x 30 in",
+      "image": "images/gallery/C11-010 30X30 Zinnia.JPG",
+      "featured": false
+    },
+    {
+      "name": "Yellow Daffodil '11",
+      "year": 11,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "60 x 48 in",
+      "image": "images/gallery/C11-011 60X48 Yellow Daff.JPG",
+      "featured": false
+    },
+    {
+      "name": "Poinsettia '11",
+      "year": 11,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "24 x 24 in",
+      "image": "images/gallery/C11-018 24 X 24 Poinsettia.JPG",
+      "featured": false
+    },
+    {
+      "name": "Gerber Daisy '10",
+      "year": 10,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 48 in",
+      "image": "images/gallery/C10-025 48 X 48 Gerber Daisy.jpg",
+      "featured": false
+    },
+    {
+      "name": "Zinnia '08",
+      "year": 8,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "30 x 30 in",
+      "image": "images/gallery/C08-004 Zinnia 30 inches by 30 inches frameless.jpg",
+      "featured": false
+    },
+    {
+      "name": "Triple White Gladiolus '08",
+      "year": 8,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "Oil on canvas",
+      "image": "images/gallery/C08-008 Triple White Glad.jpg",
+      "featured": false
+    },
+    {
+      "name": "Single White Gladiolus '08",
+      "year": 8,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "Oil on canvas",
+      "image": "images/gallery/C08-009  Single White Glad.jpg",
+      "featured": false
+    },
+    {
+      "name": "Bird of Paradise '07",
+      "year": 7,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "5 x 4 ft",
+      "image": "images/gallery/C07-008 5 feet tall 4 feet wide Bird of Paradise.jpg",
+      "featured": false
+    },
+    {
+      "name": "Apple Blossom '07",
+      "year": 7,
+      "tags": "other",
+      "medium": "Oil on canvas",
+      "dimensions": "53 x 53 in framed",
+      "image": "images/gallery/C07-006 53 inches by 53 inches framed apple blossum.jpg",
+      "featured": false
+    }
+  ],
+  "featured": [
+    {
+      "name": "Purple Anemone",
+      "thumb": "images/gallery/thumbs/purple-anemone.jpeg",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 48 in"
+    },
+    {
+      "name": "Red Poppy",
+      "thumb": "images/gallery/thumbs/red-poppy.jpeg",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 48 in"
+    },
+    {
+      "name": "Parrot Tulip",
+      "thumb": "images/gallery/thumbs/parrot-tulip.jpeg",
+      "medium": "Oil on canvas",
+      "dimensions": "60 x 36 in"
+    },
+    {
+      "name": "Blue Passionflower",
+      "thumb": "images/gallery/thumbs/blue-passionflower.jpeg",
+      "medium": "Oil on canvas",
+      "dimensions": "54 x 54 in"
+    },
+    {
+      "name": "Red Calla Lily",
+      "thumb": "images/gallery/thumbs/red-calla-lily.jpeg",
+      "medium": "Oil on canvas",
+      "dimensions": "72 x 24 in"
+    },
+    {
+      "name": "Crimson Dahlia",
+      "thumb": "images/gallery/thumbs/crimson-dahlia-spiral.jpeg",
+      "medium": "Oil on canvas",
+      "dimensions": "36 x 60 in"
+    },
+    {
+      "name": "Orange Blossom",
+      "thumb": "images/gallery/thumbs/white-orange-blossom.jpeg",
+      "medium": "Oil on canvas",
+      "dimensions": "48 x 48 in"
+    },
+    {
+      "name": "Sunflower",
+      "thumb": "images/gallery/thumbs/sunflower-center.jpeg",
+      "medium": "Oil on canvas",
+      "dimensions": "54 x 54 in"
+    }
+  ]
+}

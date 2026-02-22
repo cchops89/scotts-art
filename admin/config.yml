@@ -1,0 +1,53 @@
+backend:
+  name: github
+  repo: cchops89/scotts-art
+  branch: main
+
+media_folder: "images/gallery"
+public_folder: "images/gallery"
+
+collections:
+  - name: "gallery"
+    label: "Gallery"
+    files:
+      - name: "paintings"
+        label: "All Paintings"
+        file: "data/paintings.json"
+        format: "json"
+        fields:
+          - name: "paintings"
+            label: "Paintings"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.tags}}"
+            fields:
+              - { name: "name", label: "Painting Name", widget: "string" }
+              - { name: "year", label: "Year (2-digit, e.g. 25)", widget: "number", value_type: "int" }
+              - name: "tags"
+                label: "Flower Type"
+                widget: "select"
+                options:
+                  - { label: "Rose", value: "rose" }
+                  - { label: "Lily", value: "lily" }
+                  - { label: "Tulip", value: "tulip" }
+                  - { label: "Peony", value: "peony" }
+                  - { label: "Sunflower", value: "sunflower" }
+                  - { label: "Dahlia", value: "dahlia" }
+                  - { label: "Orchid", value: "orchid" }
+                  - { label: "Iris", value: "iris" }
+                  - { label: "Poppy", value: "poppy" }
+                  - { label: "Passionflower", value: "passionflower" }
+                  - { label: "Hibiscus", value: "hibiscus" }
+                  - { label: "Other", value: "other" }
+              - { name: "medium", label: "Medium", widget: "string", default: "Oil on canvas" }
+              - { name: "dimensions", label: "Dimensions", widget: "string", hint: "e.g. 36 x 36 in" }
+              - { name: "image", label: "Painting Image", widget: "image" }
+              - { name: "featured", label: "Show on Homepage", widget: "boolean", default: false }
+          - name: "featured"
+            label: "Homepage Featured"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { name: "name", label: "Painting Name", widget: "string" }
+              - { name: "thumb", label: "Thumbnail Image", widget: "image" }
+              - { name: "medium", label: "Medium", widget: "string", default: "Oil on canvas" }
+              - { name: "dimensions", label: "Dimensions", widget: "string" }
